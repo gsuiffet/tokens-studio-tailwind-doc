@@ -114,7 +114,7 @@ const GeneratedCSS: FC = () => {
         </Info>
         <div className="flex flex-col lg:hidden self-center gap-2">
           {data.map(({ title, token, generatedCSS }) => (
-            <Card className="block lg:hidden w-[80vw] max-w-[520px]">
+            <Card className="block lg:hidden w-[80vw] max-w-[520px]" key={title}>
               <CardHeader>
                 <CardTitle>{title}</CardTitle>
               </CardHeader>
@@ -136,7 +136,7 @@ const GeneratedCSS: FC = () => {
             </TableHeader>
             <TableBody>
               {data.map(({ title, token, generatedCSS }) => (
-                <TableRow className="w-full">
+                <TableRow className="w-full" key={title}>
                   <TableCell className="w-[100px]">{title}</TableCell>
                   <TableCell className="w-2/5 align-top max-w-[340px]">{token}</TableCell>
                   <TableCell className="w-2/5 align-top max-w-[340px]">{generatedCSS}</TableCell>
