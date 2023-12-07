@@ -17,7 +17,7 @@ const Header: FC = () => {
         <div className="flex items-center">
           <nav className="hidden md:flex mr-5" role="navigation" aria-label="Main Navigation">
             <Link href="/introduction" className="ml-5 main-navigation-full">
-              documentations
+              documentation
             </Link>
             <Link href="/primitives" className="ml-5 main-navigation-full">
               examples
