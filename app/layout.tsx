@@ -23,7 +23,11 @@ export const metadata: Metadata = {
   keywords: ['Tokens Studio', 'Tailwind', 'Documentation', 'Design Tokens', 'CSS Variables'],
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+interface RootLayoutProps {
+  children: React.ReactNode
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html suppressHydrationWarning={true}>
       <body lang="en" className={cn('bg-background font-sans antialiased', fontSans.variable)}>
