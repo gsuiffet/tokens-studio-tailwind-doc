@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -6,7 +6,7 @@ interface Props {
   classname: string;
 }
 
-const Logo: FC<Props> = ({ classname }) => {
+export function Logo({ classname }: Props) {
   return (
     <Link href="/" className={`space-x-2 items-center h-full ${classname}`}>
       <div className="pt-1 h-12 w-12 relative">
@@ -18,6 +18,4 @@ const Logo: FC<Props> = ({ classname }) => {
       </p>
     </Link>
   );
-};
-
-export { Logo };
+}
