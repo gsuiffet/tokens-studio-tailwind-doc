@@ -1,0 +1,50 @@
+/**
+ * Do not edit directly
+ * Generated on Thu, 14 Dec 2023 23:17:41 GMT
+ */
+
+@layer base {
+  /* typography */
+  h1 {
+    @apply text-[1.875rem] tracking-[-0.025em] leading-[48px] pl-[0px] normal-case no-underline font-bold  font-Inter;
+  }
+  :root {
+    /* spacing */
+
+    /* opacity */
+
+    /* borderWidth */
+
+    /* letterSpacing */
+
+    /* fontSize */
+    --my-font-size-token: 32px;
+    /* lineHeight */
+
+    /* color */
+    --my-color: #b91c1c;
+    --background-default: 0 0% 100%;
+    --background-foreground: 222.2 84% 4.9%;
+    --primary-default: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary-default: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted-default: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --destructive-default: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border-default: 214.3 31.8% 91.4%;
+    --input-default: 214.3 31.8% 91.4%;
+    --ring-default: 222.2 84% 4.9%;
+    --warning-default: #b91c1c;
+    --warning-light: #fee2e2;
+    --info-default: #1d4ed8;
+    --info-light: #dbeafe;
+    --shadows-default: 228, 10, 10;
+    /* backgroundImage */
+    --my-gradient: linear-gradient(45deg, #b91c1c 0%, #1d4ed8 100%);
+    /* boxShadow */
+    --my-shadow-tokens: 0px 25px 50px -12px #1d4ed8;
+    --my-complex-shadow-tokens-default: 5px 5px 5px 3px rgba(228, 10, 10, 0.15), inset 4px 4px 5px 6px #00000033;
+  }
+}

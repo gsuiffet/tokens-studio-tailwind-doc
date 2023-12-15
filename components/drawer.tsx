@@ -1,9 +1,9 @@
 'use client';
 import React, { FC, useState } from 'react';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
-import { Logo } from '@/components/logo';
+import { Logo } from '@/components/ui/logo';
 import { Menu } from '@/components/menu';
-import { Icon } from '@/components/icon';
+import { Icon } from '@/components/ui/icon';
 
 const Drawer: FC = () => {
   const [isSheetOpen, setIsSheetOpen] = useState(false);

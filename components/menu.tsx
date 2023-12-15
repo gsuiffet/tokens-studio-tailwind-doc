@@ -22,7 +22,7 @@ const Menu: FC<Props> = ({ handleClick }) => {
     <nav role="navigation" aria-label="Secondary Navigation" className="block md:fixed">
       <ScrollArea className="w-full p-2 md:p-6 h-[calc(100vh-112px)]">
         <MenuGroup title="get started" items={documentationPaths} handleClick={handleClick} />
-        <MenuGroup title="examples" items={examplePaths} handleClick={handleClick} />
+        <MenuGroup title="examples" items={examplePaths} handleClick={handleClick}></MenuGroup>
       </ScrollArea>
     </nav>
   );

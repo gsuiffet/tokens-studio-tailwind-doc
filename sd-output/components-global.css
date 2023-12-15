@@ -1,0 +1,29 @@
+/**
+ * Do not edit directly
+ * Generated on Thu, 14 Dec 2023 23:17:41 GMT
+ */
+
+@layer components {
+  /* typography */
+  .h1-lg {
+    @apply text-[3rem] tracking-[-0.025em] leading-[72px] pl-[0px] normal-case no-underline font-bold  font-Inter;
+  }
+  .subtitle {
+    @apply text-[1.125rem] tracking-[0px] leading-[28px] pl-[0px] normal-case no-underline font-normal  font-Inter;
+  }
+  .subtitle-lg {
+    @apply text-[1.25rem] tracking-[0px] leading-[30px] pl-[0px] normal-case no-underline font-normal  font-Inter;
+  }
+  /* border */
+  .my-border {
+    @apply border-[#b91c1c] border-[4px] border-dashed;
+  }
+  /* borderRadius */
+  .my-border-radius {
+    @apply rounded-ss-[10%] rounded-se-[30%] rounded-ee-[50%] rounded-es-[70%];
+  }
+  /* spacing */
+  .my-spacing {
+    @apply pt-[1rem] pr-[20px] pb-[8px] pl-[14px];
+  }
+}

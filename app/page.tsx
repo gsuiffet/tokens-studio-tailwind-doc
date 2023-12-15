@@ -2,9 +2,9 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import React from 'react';
 import diagram from './lotties/diagram.json';
-import { Icon } from '@/components/icon';
-import { Next } from '@/components/next';
-import { PageHeader } from '@/components/pageHeader';
+import { Icon } from '@/components/ui/icon';
+import { Next } from '@/components/ui/next';
+import { PageHeader } from '@/components/ui/pageHeader';
 import { Lottie } from '@/components/lottie';
 
 export default function Home() {

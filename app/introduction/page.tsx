@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Next } from '@/components/next';
-import { PageHeader } from '@/components/pageHeader';
-import { Info } from '@/components/info';
-import { Code } from '@/components/code';
+import { Next } from '@/components/ui/next';
+import { PageHeader } from '@/components/ui/pageHeader';
+import { Info } from '@/components/ui/info';
+import { Code } from '@/components/ui/code';
 import tokens from './tokens/tokens.json';
 
 export default function Introduction() {
@@ -34,7 +34,7 @@ export default function Introduction() {
           </ul>
         </Info>
         <div className="w-[80vw] md:w-full max-w-[600px] flex self-center">
-          <Code code={JSON.stringify(tokens, null, 2)} title="tokens.json" />
+          <Code code={JSON.stringify(tokens, null, 2)} title="tokens.json" language="json" />
         </div>
         <Next nextStep="installation" />
       </div>

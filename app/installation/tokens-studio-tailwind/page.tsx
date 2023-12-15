@@ -1,7 +1,7 @@
-import { Steps } from '@/components/steps';
+import { Steps } from '@/components/ui/steps';
 import React from 'react';
-import { Code } from '@/components/code';
-import { Info } from '@/components/info';
+import { Code } from '@/components/ui/code';
+import { Info } from '@/components/ui/info';
 
 const step_1 = {
   title: 'Install Tokens Studio Tailwind',
@@ -126,14 +126,14 @@ const step_5 = {
   title: 'Set Tailwind CSS class Utilities',
   description: (
     <p>
-      Override or extend your Tailwind theme using the <strong>./sd-output/tw-tokens.json</strong>{' '}
+      Override or extend your Tailwind theme using the <strong>`./sd-output/tw-tokens.json</strong>{' '}
       file.
     </p>
   ),
   element: (
     <div className="w-[80vw] max-w-[600px]">
       <Code
-        code={`const tokens = require('./tokens/tokens.json');\nconst {\n  spacing,\n  opacity,\n  borderWidth,\n  backgroundImage,\n  color,\n  boxShadow,\n  lineHeight,\n  fontSize,\n  letterSpacing,\n} = tokens\n\nmodule.exports = {\n  theme: {\n    boxShadow,\n    extend: {\n      fontSize,\n      colors: {\n        ...color,\n        ...\n      }\n    },\n    ...\n  },\n  ...\n}`}
+        code={`const tokens = require('./sd-output/tw-tokens.json');\nconst {\n  spacing,\n  opacity,\n  borderWidth,\n  backgroundImage,\n  color,\n  boxShadow,\n  lineHeight,\n  fontSize,\n  letterSpacing,\n} = tokens\n\nmodule.exports = {\n  ...\n  theme: {\n    boxShadow,\n    extend: {\n      fontSize,\n      colors: {\n        ...color,\n        ...\n      }\n    },\n  },\n}`}
         language="javascript"
         title="tailwind.config.ts"
         canCopy

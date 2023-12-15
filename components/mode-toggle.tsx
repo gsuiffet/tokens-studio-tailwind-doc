@@ -10,7 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Icon, IconName } from '@/components/icon';
+import { Icon, IconName } from '@/components/ui/icon';
 
 const themes: { name: string; icon: IconName }[] = [
   {
@@ -53,11 +53,11 @@ export function ModeToggle() {
             key={name}
             onClick={() => setTheme(name)}
             className={`flex space-x-2 items-center cursor-pointer p-0 ${
-              theme === name ? 'bg-accent' : 'bg-popover'
+              theme === name ? 'bg-sd-secondary-default' : 'bg-sd-background-default'
             } `}
           >
             <Icon name={icon} />
-            <p className="text-accent-foreground capitalize">{name}</p>
+            <p className="text-sd-secondary-foreground capitalize">{name}</p>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

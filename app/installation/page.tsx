@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { Code } from '@/components/code';
+import { Code } from '@/components/ui/code';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Icon } from '@/components/icon';
-import { Info } from '@/components/info';
-import { Next } from '@/components/next';
-import { Steps } from '@/components/steps';
+import { Icon } from '@/components/ui/icon';
+import { Info } from '@/components/ui/info';
+import { Next } from '@/components/ui/next';
+import { Steps } from '@/components/ui/steps';
 import globalTokens from './tokens/globalTokens.json'; // todo
 import darkTokens from './tokens/darkTokens.json'; // todo
 
@@ -42,8 +42,8 @@ const step_2 = {
     </p>
   ),
   element: (
-    <span className="pr-2 pl-3 border flex justify-between items-center w-[150px] bg-white text-primary text-black">
-      New Set <Icon name="plus" size="large" />
+    <span className="pr-2 pl-3 border flex justify-between items-center w-[150px] bg-white text-black">
+      New Set <Icon name="plus" size="large" color="text-black" />
     </span>
   ),
 };
@@ -59,10 +59,22 @@ const step_3 = {
   element: (
     <div className="w-[80vw] max-w-[600px] block lg:flex space-y-2 lg:space-y-0 lg:gap-2">
       <div className="w-full lg:1/2">
-        <Code code={JSON.stringify(globalTokens, null, 2)} title="global.json" canExpand canCopy />
+        <Code
+          code={JSON.stringify(globalTokens, null, 2)}
+          title="global.json"
+          language="json"
+          canExpand
+          canCopy
+        />
       </div>
       <div className="w-full lg:1/2">
-        <Code code={JSON.stringify(darkTokens, null, 2)} title="dark.json" canExpand canCopy />
+        <Code
+          code={JSON.stringify(darkTokens, null, 2)}
+          title="dark.json"
+          language="json"
+          canExpand
+          canCopy
+        />
       </div>
     </div>
   ),

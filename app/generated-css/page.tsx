@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { PageHeader } from '@/components/pageHeader';
-import { Info } from '@/components/info';
+import { PageHeader } from '@/components/ui/pageHeader';
+import { Info } from '@/components/ui/info';
 import {
   Table,
   TableBody,
@@ -9,8 +9,9 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { Code } from '@/components/code';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Code } from '@/components/ui/code';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import Link from 'next/link';
 
 const data = [
   {
@@ -110,6 +111,17 @@ const GeneratedCSS: FC = () => {
               measure, especially when a variable shares the same name between themes but contains
               different values.
             </li>
+            <li>
+              <strong>Usage with Media Queries:</strong> Some design tokens, such as typography
+              tokens, are not designed to work directly with media queries. For example, when
+              defining typography with varying font sizes based on screen size, it is crucial to
+              maintain distinct tokens. It is recommended to initially create tokens for smaller
+              screens before addressing larger screen configurations.{' '}
+              <Link href="/typography" className="underline">
+                See the Typography page
+              </Link>
+              .
+            </li>
           </ul>
         </Info>
         <div className="flex flex-col lg:hidden self-center gap-2">
@@ -118,8 +130,10 @@ const GeneratedCSS: FC = () => {
               <CardHeader>
                 <CardTitle>{title}</CardTitle>
               </CardHeader>
-              <CardContent className="flex flex-col gap-2">
+              <CardContent className="flex flex-col space-y-6">
+                <CardDescription>Token</CardDescription>
                 {token}
+                <CardDescription>Generated CSS</CardDescription>
                 {generatedCSS}
               </CardContent>
             </Card>

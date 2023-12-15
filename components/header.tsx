@@ -1,14 +1,14 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
-import { Logo } from '@/components/logo';
+import { Logo } from '@/components/ui/logo';
 import { ModeToggle } from '@/components/mode-toggle';
 import { Button } from '@/components/ui/button';
 import { Drawer } from '@/components/drawer';
-import { Icon } from '@/components/icon';
+import { Icon } from '@/components/ui/icon';
 
 const Header: FC = () => {
   return (
-    <header className="container h-14 sticky top-0 z-50 border-b bg-background/95 backdrop-blur">
+    <header className="container h-14 sticky top-0 z-50 border-b bg-sd-background-default/95 backdrop-blur">
       <div className="flex justify-between items-center h-full w-full px-4 md:px-16">
         <div className="md:hidden">
           <Drawer />

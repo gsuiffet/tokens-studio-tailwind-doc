@@ -9,7 +9,7 @@ import {
   Plus,
   ChevronsUpDown,
   Copy,
-  CopyCheck,
+  Check,
 } from 'lucide-react';
 
 export type IconName =
@@ -22,7 +22,7 @@ export type IconName =
   | 'plus'
   | 'chevrons_up_down'
   | 'copy'
-  | 'copy_check';
+  | 'check';
 type Size = 'default' | 'large';
 
 interface Props {
@@ -44,13 +44,13 @@ const icons: { [key in IconName]: ({ className }: { className: string }) => Reac
   plus: (props) => <Plus {...props} />,
   chevrons_up_down: (props) => <ChevronsUpDown {...props} />,
   copy: (props) => <Copy {...props} />,
-  copy_check: (props) => <CopyCheck {...props} />,
+  check: (props) => <Check {...props} />,
 };
 
 const Icon: FC<Props> = ({
   name,
   size = 'default',
-  color = 'text-accent-foreground',
+  color = 'text-sd-secondary-foreground',
   classNameContainer = '',
   classNameIcon = '',
   handleClick,
