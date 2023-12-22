@@ -1,12 +1,27 @@
 /**
  * Do not edit directly
- * Generated on Thu, 14 Dec 2023 23:17:41 GMT
+ * Generated on Fri, 22 Dec 2023 13:58:56 GMT
  */
 
 @layer base {
   /* typography */
   h1 {
     @apply text-[1.875rem] tracking-[-0.025em] leading-[48px] pl-[0px] normal-case no-underline font-bold  font-Inter;
+  }
+  h2 {
+    @apply text-[1.5rem] tracking-[-0.025em] leading-[32px] pl-[0px] normal-case no-underline font-semibold  font-Inter;
+  }
+  h3 {
+    @apply text-[0.875rem] tracking-[0em] leading-[24px] pl-[0px] capitalize no-underline font-semibold  font-Inter;
+  }
+  h4 {
+    @apply text-[0.75rem] tracking-[0em] leading-[100%] pl-[0px] normal-case no-underline font-normal  font-Inter;
+  }
+  th {
+    @apply text-[0.875rem] tracking-[0em] leading-[24px] pl-[0px] capitalize no-underline font-medium  font-Inter;
+  }
+  button {
+    @apply text-[0.875rem] tracking-[0em] leading-[24px] pl-[0px] capitalize no-underline font-medium  font-Inter;
   }
   :root {
     /* spacing */
@@ -22,7 +37,6 @@
     /* lineHeight */
 
     /* color */
-    --my-color: #b91c1c;
     --background-default: 0 0% 100%;
     --background-foreground: 222.2 84% 4.9%;
     --primary-default: 222.2 47.4% 11.2%;
@@ -31,15 +45,18 @@
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted-default: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --destructive-default: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
     --border-default: 214.3 31.8% 91.4%;
     --input-default: 214.3 31.8% 91.4%;
     --ring-default: 222.2 84% 4.9%;
-    --warning-default: #b91c1c;
-    --warning-light: #fee2e2;
-    --info-default: #1d4ed8;
-    --info-light: #dbeafe;
+    --red-100: #fee2e2;
+    --red-700: #b91c1c;
+    --blue-100: #dbeafe;
+    --blue-700: #1d4ed8;
+    --slate-400: #94a3b8;
+    --slate-700: 215 25% 24%;
+    --slate-800: #1e293b;
+    --sky-300: #7dd3fc;
+    --my-color: #b91c1c;
     --shadows-default: 228, 10, 10;
     /* backgroundImage */
     --my-gradient: linear-gradient(45deg, #b91c1c 0%, #1d4ed8 100%);

@@ -1,4 +1,4 @@
-import React, { FC, ReactElement } from 'react';
+import React, { FC } from 'react';
 import { CustomTable } from '@/components/ui/customTable';
 
 type Keys = 'value' | 'generated_class';
@@ -14,31 +14,29 @@ const dataTitles: { key: Keys; value: string }[] = [
   },
 ];
 
-const data: Record<Keys, string | ReactElement | null>[] = [
+const data = [
   {
-    value: <pre className="text-xs md:text-sm">none</pre>,
-    generated_class: <pre className="text-xs md:text-sm">normal-case</pre>,
+    value: <pre>none</pre>,
+    generated_class: <pre>normal-case</pre>,
   },
   {
-    value: <pre className="text-xs md:text-sm">uppercase</pre>,
-    generated_class: <pre className="text-xs md:text-sm">uppercase</pre>,
+    value: <pre>uppercase</pre>,
+    generated_class: <pre>uppercase</pre>,
   },
   {
-    value: <pre className="text-xs md:text-sm">lowercase</pre>,
-    generated_class: <pre className="text-xs md:text-sm">lowercase</pre>,
+    value: <pre>lowercase</pre>,
+    generated_class: <pre>lowercase</pre>,
   },
   {
-    value: <pre className="text-xs md:text-sm">capitalize</pre>,
-    generated_class: <pre className="text-xs md:text-sm">capitalize</pre>,
+    value: <pre>capitalize</pre>,
+    generated_class: <pre>capitalize</pre>,
   },
 ];
 
 const TextCase: FC = () => {
   return (
     <>
-      <h3 className="hidden lg:block text-2xl font-semibold leading-none tracking-tight">
-        Text case
-      </h3>
+      <h2>Text case</h2>
       <CustomTable data={data} dataTitles={dataTitles} />
     </>
   );

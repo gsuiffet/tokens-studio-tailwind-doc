@@ -25,7 +25,7 @@ const CardTable = <T extends Record<Keys, string | ReactElement | null>>({
 }: Props<T>) => {
   return (
     <>
-      <div className="flex flex-col lg:hidden self-center gap-2">
+      <div className="flex flex-col lg:hidden self-center gap-2 w-full">
         {data.map((item, index) => (
           <Card className="block lg:hidden" key={index}>
             <CardHeader>

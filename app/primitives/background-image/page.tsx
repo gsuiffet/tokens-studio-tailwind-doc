@@ -1,11 +1,12 @@
-import React, { FC, ReactElement } from 'react';
+import React, { FC } from 'react';
 import { CardTable } from '@/components/ui/cardTable';
 import { TokenExample } from '@/components/ui/tokenExample';
-import { Keys, dataTitles } from '../constant';
+import { dataTitles } from '../constant';
 import { Info } from '@/components/ui/info';
-import Link from 'next/link';
+import { backgroundImage } from '../codeBlocks';
+import { EmphasisAndLink } from '@/lib/emphasisAndLink';
 
-const data: Record<Keys, string | ReactElement | null>[] = [
+const data = [
   {
     token_type: 'color',
     tailwind_utility: 'backgroundImage',
@@ -15,18 +16,6 @@ const data: Record<Keys, string | ReactElement | null>[] = [
     usage: (
       <>
         <pre>{`bg-sd-{backgroundImage}`}</pre>
-        <Info role="warning" className="px-2 py-1">
-          <p className="w-fit">
-            This handle <strong>linear-gradient</strong> see{' '}
-            <Link
-              className="underline"
-              target="_blank"
-              href="https://docs.tokens.studio/available-tokens/color-tokens#gradients"
-            >
-              Tokens Studio documentation
-            </Link>
-          </p>
-        </Info>
       </>
     ),
   },
@@ -35,41 +24,24 @@ const data: Record<Keys, string | ReactElement | null>[] = [
 const BackgroundImage: FC = () => {
   return (
     <>
-      <h3 className="hidden lg:block text-2xl font-semibold leading-none tracking-tight">
-        Background image
-      </h3>
-      <CardTable data={data} dataTitles={dataTitles} cardTitle="tailwind_utility" />
+      <section>
+        <h2>Background image</h2>
+        <Info
+          role="warning"
+          data={EmphasisAndLink({
+            text: 'This handle linear-gradient see Tokens Studio documentation',
+            emphasis: ['linear-gradient'],
+            link: {
+              match: 'Tokens Studio documentation',
+              href: 'https://docs.tokens.studio/available-tokens/color-tokens#gradients',
+            },
+          })}
+        />
+        <CardTable data={data} dataTitles={dataTitles} cardTitle="tailwind_utility" />
+      </section>
+
       <TokenExample
-        example={JSON.stringify(
-          {
-            global: {
-              warning: {
-                default: {
-                  value: '#b91c1c',
-                  type: 'color',
-                },
-              },
-              info: {
-                default: {
-                  value: '#1d4ed8',
-                  type: 'color',
-                },
-              },
-              'my-gradient': {
-                value: 'linear-gradient (45deg, {warning.default} 0%, {info.default} 100%)',
-                type: 'color',
-              },
-            },
-            dark: {
-              'my-gradient': {
-                value: 'linear-gradient (45deg, #1d4ed8 0%, #b91c1c 100%)',
-                type: 'color',
-              },
-            },
-          },
-          null,
-          2,
-        )}
+        example={backgroundImage}
         usage={`<div className="bg-sd-my-gradient rounded-md w-24 h-24"></div>`}
       >
         <div className="bg-sd-my-gradient rounded-md w-24 h-24"></div>

@@ -52,7 +52,7 @@ export function ModeToggle() {
           <DropdownMenuItem
             key={name}
             onClick={() => setTheme(name)}
-            className={`flex space-x-2 items-center cursor-pointer p-0 ${
+            className={`flex space-x-2 items-center p-0 ${
               theme === name ? 'bg-sd-secondary-default' : 'bg-sd-background-default'
             } `}
           >

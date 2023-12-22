@@ -3,6 +3,7 @@ import { PageHeader } from '@/components/ui/pageHeader';
 import { TokenExample } from '@/components/ui/tokenExample';
 import { CardTable } from '@/components/ui/cardTable';
 import { Info } from '@/components/ui/info';
+import { complexShadow, simpleShadow } from '@/app/box-shadow/codeBlocks';
 
 type Keys = 'parameter' | 'allowed_units' | 'default_unit' | 'allowed_values' | 'others';
 
@@ -29,7 +30,7 @@ const dataTitles: { key: Keys; value: string }[] = [
   },
 ];
 
-const data: Record<Keys, string | ReactElement | null>[] = [
+const data = [
   {
     parameter: 'x',
     allowed_units: <pre>px | % | rem | em</pre>,
@@ -37,12 +38,8 @@ const data: Record<Keys, string | ReactElement | null>[] = [
     allowed_values: null,
     others: (
       <>
-        <Info role="warning" className="px-2 py-1">
-          <p className="w-fit">Required</p>
-        </Info>
-        <Info role="warning" className="px-2 py-1">
-          <p className="w-fit">% will be transform to em</p>
-        </Info>
+        <Info role="warning" data="Required" />
+        <Info role="warning" data="% will be transform to em" />
       </>
     ),
   },
@@ -53,12 +50,8 @@ const data: Record<Keys, string | ReactElement | null>[] = [
     allowed_values: null,
     others: (
       <>
-        <Info role="warning" className="px-2 py-1">
-          <p className="w-fit">Required</p>
-        </Info>
-        <Info role="warning" className="px-2 py-1">
-          <p className="w-fit">% will be transform to em</p>
-        </Info>
+        <Info role="warning" data="Required" />
+        <Info role="warning" data="% will be transform to em" />
       </>
     ),
   },
@@ -67,22 +60,14 @@ const data: Record<Keys, string | ReactElement | null>[] = [
     allowed_units: <pre>px | % | rem | em</pre>,
     default_unit: <pre>px</pre>,
     allowed_values: null,
-    others: (
-      <Info role="warning" className="px-2 py-1">
-        <p className="w-fit">% will be transform to em</p>
-      </Info>
-    ),
+    others: <Info role="warning" data="% will be transform to em" />,
   },
   {
     parameter: 'spread',
     allowed_units: <pre>px | % | rem | em</pre>,
     default_unit: <pre>px</pre>,
     allowed_values: null,
-    others: (
-      <Info role="warning" className="px-2 py-1">
-        <p className="w-fit">% will be transform to em</p>
-      </Info>
-    ),
+    others: <Info role="warning" data="% will be transform to em" />,
   },
   {
     parameter: 'type',
@@ -107,120 +92,25 @@ const BoxShadow: FC = () => {
         title="BoxShadow"
         description="Spécial primitive token composed of multiple parameters."
       />
-      <div className="max-w-[80vw] px-4 mb-8 space-y-4 -mt-4 lg:mt-0">
+
+      <section>
+        <h2>All parameters</h2>
         <CardTable data={data} dataTitles={dataTitles} cardTitle="parameter" />
-        <TokenExample
-          example={JSON.stringify(
-            {
-              global: {
-                'my-shadow-tokens': {
-                  value: {
-                    x: '0',
-                    y: '25',
-                    blur: '50',
-                    spread: '-12',
-                    color: '#1d4ed8',
-                    type: 'dropShadow',
-                  },
-                  type: 'boxShadow',
-                },
-              },
-              dark: {
-                'my-shadow-tokens': {
-                  value: {
-                    x: '0',
-                    y: '25',
-                    blur: '50',
-                    spread: '-12',
-                    color: '#b91c1c',
-                    type: 'dropShadow',
-                  },
-                  type: 'boxShadow',
-                },
-              },
-            },
-            null,
-            2,
-          )}
-          usage={`<div className="shadow-sd-my-shadow-tokens rounded-md w-24 h-24 bg-red-100 dark:bg-blue-100"></div>`}
-        >
-          <div className="shadow-sd-my-shadow-tokens rounded-md w-24 h-24 bg-blue-100"></div>
-        </TokenExample>
-        <TokenExample
-          example={JSON.stringify(
-            {
-              global: {
-                shadows: {
-                  default: {
-                    value: '228, 10, 10',
-                    type: 'color',
-                  },
-                },
-                'my-complex-shadow-tokens': {
-                  default: {
-                    value: [
-                      {
-                        x: 5,
-                        y: 5,
-                        spread: 3,
-                        color: 'rgba({shadows.default}, 0.15)',
-                        blur: 5,
-                        type: 'dropShadow',
-                      },
-                      {
-                        x: 4,
-                        y: 4,
-                        spread: 6,
-                        color: '#00000033',
-                        blur: 5,
-                        type: 'innerShadow',
-                      },
-                    ],
-                    type: 'boxShadow',
-                  },
-                },
-              },
-              dark: {
-                shadows: {
-                  default: {
-                    value: '145, 207, 118',
-                    type: 'color',
-                  },
-                },
-                'my-complex-shadow-tokens': {
-                  default: {
-                    value: [
-                      {
-                        x: 5,
-                        y: 5,
-                        spread: 3,
-                        color: 'rgba({shadows.default}, 0.30)',
-                        blur: 5,
-                        type: 'dropShadow',
-                      },
-                      {
-                        x: 4,
-                        y: 4,
-                        spread: 6,
-                        color: '#00000033',
-                        blur: 5,
-                        type: 'innerShadow',
-                      },
-                    ],
-                    type: 'boxShadow',
-                  },
-                },
-              },
-            },
-            null,
-            2,
-          )}
-          usage={`<div className="shadow-sd-my-complex-shadow-tokens-default rounded-md w-24 h-24 bg-red-100 dark:bg-blue-100"></div>`}
-        >
-          <div className="shadow-sd-my-complex-shadow-tokens-default rounded-md w-24 h-24 bg-blue-100"></div>
-        </TokenExample>
-      </div>
-      {/*<CardTable data={data} dataTitles={dataTitles} />*/}
+      </section>
+
+      <TokenExample
+        example={simpleShadow}
+        usage={`<div className="shadow-sd-my-shadow-tokens rounded-md w-24 h-24"></div>`}
+      >
+        <div className="shadow-sd-my-shadow-tokens rounded-md w-24 h-24"></div>
+      </TokenExample>
+
+      <TokenExample
+        example={complexShadow}
+        usage={`<div className="shadow-sd-my-complex-shadow-tokens-default rounded-md w-24 h-24 bg-sd-blue-100"></div>`}
+      >
+        <div className="shadow-sd-my-complex-shadow-tokens-default rounded-md w-24 h-24 bg-sd-blue-100"></div>
+      </TokenExample>
     </>
   );
 };

@@ -1,13 +1,10 @@
 /**
  * Do not edit directly
- * Generated on Thu, 14 Dec 2023 23:17:41 GMT
+ * Generated on Fri, 22 Dec 2023 13:58:56 GMT
  */
 
 @layer base {
   /* typography */
-  h1 {
-    @apply dark:text-[1.875rem] dark:tracking-[-0.025em] dark:leading-[48px] dark:pl-[0px] dark:normal-case dark:no-underline dark:font-bold  dark:font-Inter;
-  }
   .dark {
     /* spacing */
 
@@ -22,7 +19,6 @@
     /* lineHeight */
 
     /* color */
-    --my-color: #1d4ed8 !important;
     --background-default: 222.2 84% 4.9% !important;
     --background-foreground: 210 40% 98% !important;
     --primary-default: 210 40% 98% !important;
@@ -31,15 +27,10 @@
     --secondary-foreground: 210 40% 98% !important;
     --muted-default: 217.2 32.6% 17.5% !important;
     --muted-foreground: 215 20.2% 65.1% !important;
-    --destructive-default: 0 62.8% 30.6% !important;
-    --destructive-foreground: 210 40% 98% !important;
     --border-default: 217.2 32.6% 17.5% !important;
     --input-default: 217.2 32.6% 17.5% !important;
     --ring-default: 212.7 26.8% 83.9% !important;
-    --warning-default: #b91c1c !important;
-    --warning-light: #fee2e2 !important;
-    --info-default: #1d4ed8 !important;
-    --info-light: #dbeafe !important;
+    --my-color: #1d4ed8 !important;
     --shadows-default: 145, 207, 118 !important;
     /* backgroundImage */
     --my-gradient: linear-gradient(45deg, #1d4ed8 0%, #b91c1c 100%) !important;

@@ -42,11 +42,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <div className="flex flex-col min-h-screen">
             <Header />
             <div className="container flex">
+              {/*<aside className="hidden md:flex w-60">*/}
               <aside className="hidden md:flex w-60">
                 <Menu />
               </aside>
-              <main>
-                <div className="w-full md:max-w-[550px] lg:max-w-[980px]">{children}</div>
+              <main className="w-full px-4 pb-4 flex flex-col gap-8">
+                {/*<div className="w-full md:max-w-[550px] lg:max-w-[980px]">{children}</div>*/}
+                {/*<div className="w-full md:max-w-[calc(100vw-15rem)]">{children}</div>*/}
+                {/*<div className="w-full md:max-w-[calc(100vw-15rem)]">{children}</div>*/}
+                {children}
+                {/*h-[calc(100vh-112px)]*/}
               </main>
             </div>
             <footer className="container mt-auto h-14 border-t flex items-center bg-sd-background-default">

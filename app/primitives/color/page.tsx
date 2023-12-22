@@ -1,9 +1,10 @@
-import React, { FC, ReactElement } from 'react';
+import React, { FC } from 'react';
 import { CardTable } from '@/components/ui/cardTable';
 import { TokenExample } from '@/components/ui/tokenExample';
-import { Keys, dataTitles } from '../constant';
+import { dataTitles } from '../constant';
+import { color } from '../codeBlocks';
 
-const data: Record<Keys, string | ReactElement | null>[] = [
+const data = [
   {
     token_type: 'color',
     tailwind_utility: 'color',
@@ -29,27 +30,12 @@ const data: Record<Keys, string | ReactElement | null>[] = [
 const Color: FC = () => {
   return (
     <>
-      <h3 className="hidden lg:block text-2xl font-semibold leading-none tracking-tight">Color</h3>
-      <CardTable data={data} dataTitles={dataTitles} cardTitle="tailwind_utility" />
+      <section>
+        <h2>Color</h2>
+        <CardTable data={data} dataTitles={dataTitles} cardTitle="tailwind_utility" />
+      </section>
       <TokenExample
-        example={JSON.stringify(
-          {
-            global: {
-              'my-color': {
-                value: '#b91c1c',
-                type: 'color',
-              },
-            },
-            dark: {
-              'my-color': {
-                value: '#1d4ed8',
-                type: 'color',
-              },
-            },
-          },
-          null,
-          2,
-        )}
+        example={color}
         usage={`<div className="bg-sd-my-color rounded-md w-24 h-24"></div>`}
       >
         <div className="bg-sd-my-color rounded-md w-24 h-24"></div>

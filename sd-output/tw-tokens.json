@@ -1,6 +1,5 @@
 {
   "color": {
-    "sd-my-color": "var(--my-color)",
     "sd-background-default": "hsl(var(--background-default))",
     "sd-background-foreground": "hsl(var(--background-foreground))",
     "sd-primary-default": "hsl(var(--primary-default))",
@@ -9,16 +8,19 @@
     "sd-secondary-foreground": "hsl(var(--secondary-foreground))",
     "sd-muted-default": "hsl(var(--muted-default))",
     "sd-muted-foreground": "hsl(var(--muted-foreground))",
-    "sd-destructive-default": "hsl(var(--destructive-default))",
-    "sd-destructive-foreground": "hsl(var(--destructive-foreground))",
     "sd-border-default": "hsl(var(--border-default))",
     "sd-input-default": "hsl(var(--input-default))",
     "sd-ring-default": "hsl(var(--ring-default))",
-    "sd-warning-default": "var(--warning-default)",
-    "sd-warning-light": "var(--warning-light)",
-    "sd-info-default": "var(--info-default)",
-    "sd-info-light": "var(--info-light)",
-    "sd-shadows-default": "var(--shadows-default)"
+    "sd-my-color": "var(--my-color)",
+    "sd-shadows-default": "var(--shadows-default)",
+    "sd-red-100": "var(--red-100)",
+    "sd-red-700": "var(--red-700)",
+    "sd-blue-100": "var(--blue-100)",
+    "sd-blue-700": "var(--blue-700)",
+    "sd-slate-400": "var(--slate-400)",
+    "sd-slate-700": "hsl(var(--slate-700))",
+    "sd-slate-800": "var(--slate-800)",
+    "sd-sky-300": "var(--sky-300)"
   },
   "fontSize": {
     "sd-my-font-size-token": "var(--my-font-size-token)"

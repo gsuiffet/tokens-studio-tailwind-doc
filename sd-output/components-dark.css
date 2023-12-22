@@ -1,20 +1,14 @@
 /**
  * Do not edit directly
- * Generated on Thu, 14 Dec 2023 23:17:41 GMT
+ * Generated on Fri, 22 Dec 2023 13:58:56 GMT
  */
 
 @layer components {
   /* typography */
-  .h1-lg {
-    @apply dark:text-[3rem] dark:tracking-[-0.025em] dark:leading-[72px] dark:pl-[0px] dark:normal-case dark:no-underline dark:font-bold  dark:font-Inter;
-  }
-  .subtitle {
-    @apply dark:text-[1.125rem] dark:tracking-[0px] dark:leading-[28px] dark:pl-[0px] dark:normal-case dark:no-underline dark:font-normal  dark:font-Inter;
-  }
-  .subtitle-lg {
-    @apply dark:text-[1.25rem] dark:tracking-[0px] dark:leading-[30px] dark:pl-[0px] dark:normal-case dark:no-underline dark:font-normal  dark:font-Inter;
-  }
   /* border */
+  .border-outline {
+    @apply dark:border-[hsl(217.2,32.6%,17.5%)] dark:border-[1px] dark:border-solid;
+  }
   .my-border {
     @apply dark:border-[#1d4ed8] dark:border-[2px] dark:border-solid;
   }

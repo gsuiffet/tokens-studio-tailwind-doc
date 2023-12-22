@@ -2,109 +2,102 @@ import { Steps } from '@/components/ui/steps';
 import React from 'react';
 import { Code } from '@/components/ui/code';
 import { Info } from '@/components/ui/info';
+import { EmphasisAndLink } from '@/lib/emphasisAndLink';
+import { script } from '../codeBlocks';
 
 const step_1 = {
   title: 'Install Tokens Studio Tailwind',
-  description: <p>Start by installing the Tokens Studio Tailwind package</p>,
+  description: <p>Start by installing the Tokens Studio Tailwind package.</p>,
   element: (
-    <div className="w-[80vw] max-w-[600px]">
-      <Code
-        code="npm install --save-dev @gsuiffet/tokens-studio-tailwind"
-        language="bash"
-        title="Terminal"
-        canCopy
-      />
-    </div>
+    <Code
+      code="npm install --save-dev @gsuiffet/tokens-studio-tailwind"
+      language="bash"
+      title="Terminal"
+      canCopy
+    />
   ),
 };
 
 const step_2 = {
   title: 'Add the script',
   description: (
-    <div className="flex flex-col gap-2">
+    <>
       <p>
-        Add the following script to your <strong>`package.json`</strong>
+        {EmphasisAndLink({
+          text: `Add the following script to your \`package.json\`.`,
+          emphasis: [`package.json`],
+        })}
       </p>
-      <Info>
-        <ul className="leading-7 list-disc">
-          <li>
-            <strong>`-j`</strong> option specifies the absolute path to your JSON design tokens file
-          </li>
-          <li>
-            <strong>`-t`</strong> option (optional) is a comma-separated list of your themes
-          </li>
-        </ul>
-      </Info>
-    </div>
-  ),
-  element: (
-    <div className="w-[80vw] max-w-[600px]">
-      <Code
-        code={JSON.stringify(
-          {
-            scripts: {
-              dev: 'npm run build:sd && next dev',
-              build: 'npm run build:sd && next build',
-              'build:sd': 'tokens-studio-tailwind -j tokens/tokens.json -t global,dark',
-            },
-          },
-          null,
-          2,
-        )}
-        language="json"
-        title="package.json"
-        canCopy
+      <Info
+        data={[
+          EmphasisAndLink({
+            text: `-j option specifies the absolute path to your JSON design tokens file`,
+            emphasis: [`-j`],
+          }),
+          EmphasisAndLink({
+            text: `-t option (optional) is a comma-separated list of your themes`,
+            emphasis: [`-t`],
+          }),
+        ]}
       />
-    </div>
+    </>
   ),
+  element: <Code code={script} language="json" title="package.json" canCopy />,
 };
 
 const step_3 = {
   title: 'Run the script',
   description: (
-    <div className="flex flex-col gap-2">
+    <>
       <p>
-        Init <strong>Tokens Studio Tailwind</strong> by running the script for the first time
+        {EmphasisAndLink({
+          text: `Init Tokens Studio Tailwind by running the script for the first time.`,
+          emphasis: [`Tokens Studio Tailwind`],
+        })}
       </p>
-      <Info>
-        <p>
-          This will create a <strong>`sd-output`</strong> folder at the top-level of your project
-          and generate several files according to your tokens.
-        </p>
-      </Info>
-    </div>
+      <Info
+        data={EmphasisAndLink({
+          text: `This will create a \`sd-output\` folder at the top-level of your project
+          and generate several files according to your tokens.`,
+          emphasis: [`sd-output`],
+        })}
+      />
+    </>
   ),
-  element: (
-    <div className="w-[80vw] max-w-[600px]">
-      <Code code="npm run build:sd" language="bash" title="Terminal" canCopy />
-    </div>
-  ),
+  element: <Code code="npm run build:sd" language="bash" title="Terminal" canCopy />,
 };
 
 const step_4 = {
   title: 'Import the generated CSS',
   description: (
-    <div className="flex flex-col gap-2">
-      <p className="mb-4">
-        Follow this step to import all generated CSS into your <strong>`global.css`</strong> file.
+    <>
+      <p>
+        {EmphasisAndLink({
+          text: `Follow this step to import all generated CSS into your \`global.css\` file.`,
+          emphasis: [`global.css`],
+        })}
       </p>
-      <Info>
-        <ul className="leading-7 list-disc">
-          <li>
-            Install <strong>`postcss-import`</strong>
-          </li>
-          <li>
-            Create a file <strong>`postcss.config.js`</strong>
-          </li>
-          <li>
-            Import the <strong>`./sd-output`</strong> folder into your <strong>`global.css`</strong>
-          </li>
-        </ul>
-      </Info>
-    </div>
+      <Info
+        data={[
+          EmphasisAndLink({
+            text: `Install \`postcss-import\``,
+            emphasis: [`postcss-import`],
+          }),
+          EmphasisAndLink({
+            text: `Create a file \`postcss.config.js\``,
+            emphasis: [`postcss.config.js`],
+          }),
+          EmphasisAndLink({
+            text: `Import the \`./sd-output\` folder into your \`global.css\``,
+            emphasis: [`./sd-output`, `global.css`],
+          }),
+        ]}
+        className="list-decimal"
+      />
+    </>
   ),
   element: (
-    <div className="w-[80vw] max-w-[600px] flex flex-col gap-2">
+    <>
       <Code code="npm install --save-dev postcss-import" language="bash" title="Terminal" canCopy />
       <Code
         code={`module.exports = {\n  plugins: {\n    'postcss-import': {},\n    tailwindcss: {},\n    autoprefixer: {},\n  }\n}`}
@@ -118,7 +111,7 @@ const step_4 = {
         title="global.css"
         canCopy
       />
-    </div>
+    </>
   ),
 };
 
@@ -126,19 +119,19 @@ const step_5 = {
   title: 'Set Tailwind CSS class Utilities',
   description: (
     <p>
-      Override or extend your Tailwind theme using the <strong>`./sd-output/tw-tokens.json</strong>{' '}
-      file.
+      {EmphasisAndLink({
+        text: `Override or extend your Tailwind theme using the \`./sd-output/tw-tokens.json\` file.`,
+        emphasis: [`./sd-output/tw-tokens.json`],
+      })}
     </p>
   ),
   element: (
-    <div className="w-[80vw] max-w-[600px]">
-      <Code
-        code={`const tokens = require('./sd-output/tw-tokens.json');\nconst {\n  spacing,\n  opacity,\n  borderWidth,\n  backgroundImage,\n  color,\n  boxShadow,\n  lineHeight,\n  fontSize,\n  letterSpacing,\n} = tokens\n\nmodule.exports = {\n  ...\n  theme: {\n    boxShadow,\n    extend: {\n      fontSize,\n      colors: {\n        ...color,\n        ...\n      }\n    },\n  },\n}`}
-        language="javascript"
-        title="tailwind.config.ts"
-        canCopy
-      />
-    </div>
+    <Code
+      code={`const tokens = require('./sd-output/tw-tokens.json');\nconst {\n  spacing,\n  opacity,\n  borderWidth,\n  backgroundImage,\n  color,\n  boxShadow,\n  lineHeight,\n  fontSize,\n  letterSpacing,\n} = tokens\n\nmodule.exports = {\n  ...\n  theme: {\n    boxShadow,\n    extend: {\n      fontSize,\n      colors: {\n        ...color,\n        ...\n      }\n    },\n  },\n}`}
+      language="javascript"
+      title="tailwind.config.ts"
+      canCopy
+    />
   ),
 };
 

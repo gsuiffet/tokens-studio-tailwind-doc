@@ -22,24 +22,37 @@
   * {
     @apply border-sd-border-default;
   }
-  /*body {*/
-  /*  @apply bg-background text-foreground;*/
-  /*}*/
 
-  /*h1 {*/
-  /*  @apply dark:lg:text-5xl dark:lg:leading-[1.3]*/
-  /*}*/
+  h1 {
+    @apply lg:h1-lg;
+  }
 
-  /*html,.test {*/
-  /*  --scroll-behavior: smooth !important;*/
-  /*  scroll-behavior: smooth !important;*/
-  /*}*/
+  h4 {
+    @apply text-sd-sky-300
+  }
 
-  /*:not(pre) > code[class*='language-'],*/
-  /*pre[class*='language-'] {*/
-  /*  @apply bg-slate-800 !important;*/
-  /*}*/
+  p,
+  h1,
+  h2,
+  h3,
+  td,
+  th {
+    @apply text-sd-primary-default;
+  }
+
+  th {
+    @apply text-sd-muted-foreground;
+  }
+
   pre {
-    @apply bg-sd-primary-foreground p-1 px-2 rounded-md w-fit;
+    @apply bg-sd-primary-foreground py-1 px-2 rounded-md w-fit whitespace-pre-wrap;
+  }
+
+  ul {
+    @apply leading-7 list-disc;
+  }
+
+  section {
+    @apply flex flex-col gap-6;
   }
 }

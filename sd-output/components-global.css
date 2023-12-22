@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 14 Dec 2023 23:17:41 GMT
+ * Generated on Fri, 22 Dec 2023 13:58:56 GMT
  */
 
 @layer components {
@@ -18,9 +18,15 @@
   .my-border {
     @apply border-[#b91c1c] border-[4px] border-dashed;
   }
+  .border-outline {
+    @apply border-[hsl(214.3,31.8%,91.4%)] border-[1px] border-solid;
+  }
   /* borderRadius */
   .my-border-radius {
     @apply rounded-ss-[10%] rounded-se-[30%] rounded-ee-[50%] rounded-es-[70%];
+  }
+  .border-sm {
+    @apply rounded-[6px];
   }
   /* spacing */
   .my-spacing {
