@@ -1,5 +1,5 @@
 import { fontFamily } from 'tailwindcss/defaultTheme';
-import tokens from './sd-output/tw-tokens.json'
+import tokens from './sd-output/tw-tokens.json';
 
 const {
   // spacing,

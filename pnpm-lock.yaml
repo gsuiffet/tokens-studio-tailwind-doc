@@ -58,7 +58,7 @@ dependencies:
     version: 2.1.0
   tailwindcss-animate:
     specifier: ^1.0.7
-    version: 1.0.7(tailwindcss@3.4.0)
+    version: 1.0.7(tailwindcss@3.3.5)
 
 devDependencies:
   '@gsuiffet/tokens-studio-tailwind':
@@ -101,8 +101,8 @@ devDependencies:
     specifier: ^3.1.0
     version: 3.1.1
   tailwindcss:
-    specifier: ^3.3.0
-    version: 3.4.0
+    specifier: 3.3.5
+    version: 3.3.5
   typescript:
     specifier: ^5
     version: 5.3.3
@@ -4805,7 +4805,7 @@ packages:
       '@babel/runtime': 7.23.6
     dev: false
 
-  /tailwindcss-animate@1.0.7(tailwindcss@3.4.0):
+  /tailwindcss-animate@1.0.7(tailwindcss@3.3.5):
     resolution:
       {
         integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==,
@@ -4813,13 +4813,13 @@ packages:
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
     dependencies:
-      tailwindcss: 3.4.0
+      tailwindcss: 3.3.5
     dev: false
 
-  /tailwindcss@3.4.0:
+  /tailwindcss@3.3.5:
     resolution:
       {
-        integrity: sha512-VigzymniH77knD1dryXbyxR+ePHihHociZbXnLZHUyzf2MMs2ZVqlUrZ3FvpXP8pno9JzmILt1sZPD19M3IxtA==,
+        integrity: sha512-5SEZU4J7pxZgSkv7FP1zY8i2TIAOooNZ1e/OGtxIEv6GltpoiXUqWvLy89+a10qYTB1N5Ifkuw9lqQkN9sscvA==,
       }
     engines: { node: '>=14.0.0' }
     hasBin: true

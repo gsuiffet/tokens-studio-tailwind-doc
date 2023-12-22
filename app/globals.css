@@ -28,7 +28,7 @@
   }
 
   h4 {
-    @apply text-sd-sky-300
+    @apply text-sd-sky-300;
   }
 
   p,

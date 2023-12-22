@@ -74,10 +74,7 @@ const Code: FC<CodeProps> = ({
         <DropdownMenuTrigger className={copyClassName}>{copyButton()}</DropdownMenuTrigger>
         <DropdownMenuContent>
           {packagesManager.map(({ packageName, codeCopy }) => (
-            <DropdownMenuItem
-              key={packageName}
-              onClick={() => onCopy(codeCopy)}
-            >
+            <DropdownMenuItem key={packageName} onClick={() => onCopy(codeCopy)}>
               {packageName}
             </DropdownMenuItem>
           ))}
