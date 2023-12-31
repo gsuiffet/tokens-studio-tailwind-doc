@@ -1,0 +1,23 @@
+/**
+ * Do not edit directly
+ * Generated on Sun, 31 Dec 2023 13:46:05 GMT
+ */
+
+@layer components {
+  /* typography */
+  /* border */
+  .my-border {
+    @apply dark:border-[#1d4ed8] dark:border-[2px] dark:border-solid;
+  }
+  .border-outline {
+    @apply dark:border-[hsl(217.2,32.6%,17.5%)] dark:border-[1px] dark:border-solid;
+  }
+  /* borderRadius */
+  .my-border-radius {
+    @apply dark:rounded-ss-[10px] dark:rounded-se-[160px] dark:rounded-es-[160px] dark:rounded-ee-[6px];
+  }
+  /* spacing */
+  .my-spacing {
+    @apply dark:pt-[2rem] dark:px-[0.5em] dark:pb-[20px];
+  }
+}

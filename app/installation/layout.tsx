@@ -1,47 +1,30 @@
-'use client';
 import React, { ReactNode } from 'react';
-import { PageHeader } from '@/components/pageHeader';
-import { Menubar, MenubarMenu, MenubarTrigger } from '@/components/ui/menubar';
-import { usePathname } from 'next/navigation';
-import { useRouter } from 'next/navigation';
+import { PageHeader } from '@/components/ui/pageHeader';
+import { EmphasisAndLink } from '@/lib/emphasisAndLink';
+
+const paths = [
+  {
+    title: 'Tokens Studio',
+    path: '/installation',
+  },
+  {
+    title: 'Tokens Studio Tailwind',
+    path: '/installation/tokens-studio-tailwind',
+  },
+];
 
 export default function InstallationLayout({ children }: { children: ReactNode }) {
-  const pathname = usePathname();
-  const isTokensStudioTailwindStep = pathname === '/installation/tokens-studio-tailwind';
-  const router = useRouter();
-
   return (
     <>
       <PageHeader
         title="Installation"
-        description={
-          <>
-            Streamline your workflow by synchronizing your design tokens with your repository.{' '}
-            <strong>Tokens Studio Tailwind</strong> will then generate all the corresponding
-            variables and components.
-          </>
-        }
+        description={EmphasisAndLink({
+          text: `Streamline your workflow by synchronizing your design tokens with your repository.
+            Tokens Studio Tailwind will then generate all the corresponding variables and components.`,
+          emphasis: ['Tokens Studio Tailwind'],
+        })}
+        subMenu={paths}
       />
-      <Menubar className="mb-8 w-fit">
-        <MenubarMenu>
-          <MenubarTrigger
-            onClick={() => router.push('/installation')}
-            data-state={!isTokensStudioTailwindStep ? 'open' : 'unchecked'}
-            className="whitespace-nowrap cursor-pointer text-xs md:text-sm"
-          >
-            Tokens Studio
-          </MenubarTrigger>
-        </MenubarMenu>
-        <MenubarMenu>
-          <MenubarTrigger
-            onClick={() => router.push('/installation/tokens-studio-tailwind')}
-            data-state={isTokensStudioTailwindStep ? 'open' : 'unchecked'}
-            className="whitespace-nowrap cursor-pointer text-xs md:text-sm"
-          >
-            Tokens Studio Tailwind
-          </MenubarTrigger>
-        </MenubarMenu>
-      </Menubar>
       {children}
     </>
   );

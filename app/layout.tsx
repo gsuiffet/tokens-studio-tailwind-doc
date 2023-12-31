@@ -1,17 +1,17 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { Inter as FontSans } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { cn } from '@/lib/utils';
 import { Header } from '@/components/header';
-import { ToastContainer } from 'react-toastify';
 import { Menu } from '@/components/menu';
 import Link from 'next/link';
+import { EmphasisAndLink } from '@/lib/emphasisAndLink';
 
-const fontSans = FontSans({
+const fontInter = Inter({
   subsets: ['latin'],
-  variable: '--font-sans',
+  variable: '--font-Inter',
 });
 
 export const metadata: Metadata = {
@@ -30,7 +30,10 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html suppressHydrationWarning={true}>
-      <body lang="en" className={cn('bg-background font-sans antialiased', fontSans.variable)}>
+      <body
+        lang="en"
+        className={cn('bg-sd-background-default font-Inter antialiased', fontInter.variable)}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -40,25 +43,27 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <div className="flex flex-col min-h-screen">
             <Header />
             <div className="container flex">
+              ${' '}
               <aside className="hidden md:flex w-60">
                 <Menu />
               </aside>
-              <main>
-                <div className="w-full md:max-w-[550px] lg:max-w-[980px]">{children}</div>
+              <main className="w-full px-sd-sizing-sm pb-sd-sizing-2-xl flex flex-col gap-sd-sizing-lg">
+                {children}
               </main>
             </div>
-            <footer className="container mt-auto h-14 border-t flex items-center bg-background">
-              <p className="text-muted-foreground text-xs sm:text-sm">
-                This website has been made using <strong>Tokens Studio Tailwind</strong>. See the
-                source code on {/*todo*/}
-                <Link href="https://www" className="underline">
-                  GitHub
-                </Link>
-                .
+            <footer className="container mt-auto h-sd-sizing-3-xl border-t flex items-center">
+              <p className="text-sd-muted-foreground text-xs sm:text-sm">
+                {EmphasisAndLink({
+                  text: `This website has been made using Tokens Studio Tailwind. See the source code on GitHub.`,
+                  emphasis: ['Tokens Studio Tailwind'],
+                  link: {
+                    match: 'GitHub',
+                    href: 'https://github.com/gsuiffet/tokens-studio-tailwind-doc',
+                  },
+                })}
               </p>
             </footer>
           </div>
-          <ToastContainer closeButton={false} autoClose={1500} />
         </ThemeProvider>
       </body>
     </html>

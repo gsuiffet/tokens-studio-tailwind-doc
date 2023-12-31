@@ -1,5 +1,5 @@
 'use client';
-import React, { FC } from 'react';
+import React, { FC, ReactElement } from 'react';
 import Link from 'next/link';
 import { kebabCase } from 'lodash';
 import { usePathname } from 'next/navigation';
@@ -13,17 +13,22 @@ interface Props {
 const MenuGroup: FC<Props> = ({ title, items, handleClick }) => {
   const selectedPath = usePathname();
   const isSelected = (pathname: string) => {
-    return pathname === selectedPath
-      ? 'bg-accent text-accent-foreground'
-      : 'hover:bg-accent hover:text-accent-foreground';
+    if (pathname.includes('border')) {
+      return selectedPath === pathname
+        ? 'text-sd-primary-default font-semibold'
+        : 'hover:underline';
+    }
+    return selectedPath.includes(pathname)
+      ? 'text-sd-primary-default font-semibold'
+      : 'hover:underline';
   };
 
   return (
-    <ul className="text-accent-foreground text-sm">
+    <ul className="text-sd-muted-foreground">
       <Link href={`/${items[0]}`} onClick={handleClick}>
-        <li className="py-2 px-2 font-bold capitalize">{title}</li>
+        <li className="spacing-default font-bold capitalize">{title}</li>
       </Link>
-      <div className="flex flex-col space-y-1">
+      <div className="flex flex-col">
         {items.map((item) => {
           const path = kebabCase(item);
           const isCurrent = `/${path}` === selectedPath ? 'page' : undefined;
@@ -31,7 +36,7 @@ const MenuGroup: FC<Props> = ({ title, items, handleClick }) => {
           return (
             <Link href={`/${path}`} key={item} onClick={handleClick}>
               <li
-                className={`font-medium rounded-sm px-3 py-1.5 capitalize ${isSelected(
+                className={`menu spacing-large capitalize hover:underline ${isSelected(
                   `/${path}`,
                 )}`}
                 aria-current={isCurrent}

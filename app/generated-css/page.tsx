@@ -1,30 +1,14 @@
 import React, { FC } from 'react';
-import { PageHeader } from '@/components/pageHeader';
-import { Info } from '@/components/info';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table';
-import { Code } from '@/components/code';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Info } from '@/components/ui/info';
+import { Code } from '@/components/ui/code';
+import { EmphasisAndLink } from '@/lib/emphasisAndLink';
+import { GeneratedCSS } from '@/components/ui/generatedCSS';
+import { simple, withChildren, theme } from './codeBlocks';
 
 const data = [
   {
     title: 'Simple token',
-    token: (
-      <Code
-        code={JSON.stringify(
-          { global: { TOKEN_NAME: { value: 'TOKEN_VALUE', type: 'TOKEN_TYPE' } } },
-          null,
-          2,
-        )}
-        title="tokens.json"
-      />
-    ),
+    token: <Code code={simple} title="tokens.json" />,
     generatedCSS: (
       <Code
         code={`@layer base {\n  :root {\n    --token-name: TOKEN_VALUE;\n  }\n}`}
@@ -35,22 +19,7 @@ const data = [
   },
   {
     title: 'Token with children',
-    token: (
-      <Code
-        code={JSON.stringify(
-          {
-            global: {
-              TOKEN_NAME_PARENT: {
-                TOKEN_NAME_CHILDREN: { value: 'TOKEN_VALUE', type: 'TOKEN_TYPE' },
-              },
-            },
-          },
-          null,
-          2,
-        )}
-        title="tokens.json"
-      />
-    ),
+    token: <Code code={withChildren} title="tokens.json" />,
     generatedCSS: (
       <Code
         code={`@layer base {\n  :root {\n    --token-name-parent-token-name-children: TOKEN_VALUE;\n  }\n}`}
@@ -61,16 +30,7 @@ const data = [
   },
   {
     title: 'Theme token',
-    token: (
-      <Code
-        code={JSON.stringify(
-          { dark: { TOKEN_NAME: { value: 'TOKEN_VALUE', type: 'TOKEN_TYPE' } } },
-          null,
-          2,
-        )}
-        title="tokens.json"
-      />
-    ),
+    token: <Code code={theme} title="tokens.json" />,
     generatedCSS: (
       <Code
         code={`@layer base {\n  .dark {\n    --token-name: TOKEN_VALUE !important;\n  }\n}`}
@@ -81,73 +41,44 @@ const data = [
   },
 ];
 
-const GeneratedCSS: FC = () => {
+const GeneratedCSSPage: FC = () => {
   return (
     <>
-      <PageHeader
-        title="Generated CSS from token"
-        description="Transforming Tokens into Dynamic CSS"
-      />
-      <div className="flex flex-col gap-8 px-4 pb-8">
-        <Info>
-          <p className="-ml-4 underline">
-            When generating CSS from tokens, consider the following points:
-          </p>
-          <ul className="leading-7 list-disc">
-            <li>
-              <strong>Variable Token Values:</strong> A token value may be defined as a variable. In
-              such cases, the package will automatically assign the corresponding value.
-            </li>
-            <li>
-              <strong>Transformation of Token Keys:</strong> Token keys are transformed into
+      <section>
+        <Info
+          data={[
+            EmphasisAndLink({
+              text: `Transformation of Token Keys: Token keys are transformed into
               kebab-case format. For tokens with multiple children, the package concatenates the
-              parent key with all children keys.
-            </li>
-            <li>
-              <strong>Theme-specific Token Handling:</strong> Tokens located within a theme other
-              than the <strong>`global`</strong> theme will be utilized with the{' '}
-              <strong>`!important`</strong> keyword. This approach is adopted as a precautionary
+              parent key with all children keys.`,
+              emphasis: ['Transformation of Token Keys:'],
+            }),
+            EmphasisAndLink({
+              text: `Theme-specific Token Handling: Tokens located within a theme other
+              than the \`global\` theme will be utilized with the
+              \`!important\` keyword. This approach is adopted as a precautionary
               measure, especially when a variable shares the same name between themes but contains
-              different values.
-            </li>
-          </ul>
-        </Info>
-        <div className="flex flex-col lg:hidden self-center gap-2">
-          {data.map(({ title, token, generatedCSS }) => (
-            <Card className="block lg:hidden w-[80vw] max-w-[520px]" key={title}>
-              <CardHeader>
-                <CardTitle>{title}</CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-col gap-2">
-                {token}
-                {generatedCSS}
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-        <div className="hidden lg:block w-full mx-auto">
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead className="w-[100px]"></TableHead>
-                <TableHead>Token</TableHead>
-                <TableHead>Generated CSS</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {data.map(({ title, token, generatedCSS }) => (
-                <TableRow className="w-full" key={title}>
-                  <TableCell className="w-[100px]">{title}</TableCell>
-                  <TableCell className="w-2/5 align-top max-w-[340px]">{token}</TableCell>
-                  <TableCell className="w-2/5 align-top max-w-[340px]">{generatedCSS}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </div>
-      </div>
+              different values.`,
+              emphasis: ['Theme-specific Token Handling:', `global`, `!important`],
+            }),
+            EmphasisAndLink({
+              text: `Usage with Media Queries: Some design tokens, such as typography
+              tokens, are not designed to work directly with media queries. For example, when
+              defining typography with varying font sizes based on screen size, it is crucial to
+              maintain distinct tokens. It is recommended to initially create tokens for smaller
+              screens before addressing larger screen configurations. See the Typography page.`,
+              emphasis: ['Usage with Media Queries:'],
+              link: {
+                match: 'Typography page',
+                href: '/typography',
+              },
+            }),
+          ]}
+        />
+        <GeneratedCSS data={data} />
+      </section>
     </>
   );
 };
 
-export default GeneratedCSS;
+export default GeneratedCSSPage;

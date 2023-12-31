@@ -8,9 +8,9 @@ interface Props {
 
 const Next: FC<Props> = ({ nextStep }) => {
   return (
-    <div className="flex px-4 py-8 justify-end">
+    <div className="flex justify-end">
       <Link href={`/${nextStep}`}>
-        <Button className="capitalize">{nextStep}</Button>
+        <Button>{nextStep.replace('-', ' ')}</Button>
       </Link>
     </div>
   );

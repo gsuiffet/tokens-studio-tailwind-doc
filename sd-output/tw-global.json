@@ -1,0 +1,47 @@
+{
+  "color": {
+    "sd-my-color": "var(--my-color)",
+    "sd-my-shadow-color-default": "var(--my-shadow-color-default)",
+    "sd-background-default": "hsl(var(--background-default))",
+    "sd-background-foreground": "hsl(var(--background-foreground))",
+    "sd-primary-default": "hsl(var(--primary-default))",
+    "sd-primary-foreground": "hsl(var(--primary-foreground))",
+    "sd-secondary-default": "hsl(var(--secondary-default))",
+    "sd-secondary-foreground": "hsl(var(--secondary-foreground))",
+    "sd-muted-default": "hsl(var(--muted-default))",
+    "sd-muted-foreground": "hsl(var(--muted-foreground))",
+    "sd-border-default": "hsl(var(--border-default))",
+    "sd-ring-default": "hsl(var(--ring-default))",
+    "sd-red-100": "var(--red-100)",
+    "sd-red-700": "var(--red-700)",
+    "sd-blue-100": "var(--blue-100)",
+    "sd-blue-700": "var(--blue-700)",
+    "sd-slate-400": "var(--slate-400)",
+    "sd-slate-700": "hsl(var(--slate-700))",
+    "sd-slate-800": "var(--slate-800)",
+    "sd-sky-300": "var(--sky-300)"
+  },
+  "fontSize": {
+    "sd-my-font-size-token": "var(--my-font-size-token)"
+  },
+  "boxShadow": {
+    "sd-my-shadow-tokens": "var(--my-shadow-tokens)",
+    "sd-my-complex-shadow-tokens-default": "var(--my-complex-shadow-tokens-default)",
+    "sd-shadow-default": "var(--shadow-default)",
+    "sd-shadow-light": "var(--shadow-light)"
+  },
+  "backgroundImage": {
+    "sd-my-gradient": "var(--my-gradient)"
+  },
+  "spacing": {
+    "sd-sizing-xs": "var(--sizing-xs)",
+    "sd-sizing-sm": "var(--sizing-sm)",
+    "sd-sizing-md": "var(--sizing-md)",
+    "sd-sizing-lg": "var(--sizing-lg)",
+    "sd-sizing-xl": "var(--sizing-xl)",
+    "sd-sizing-2-xl": "var(--sizing-2-xl)",
+    "sd-sizing-3-xl": "var(--sizing-3-xl)",
+    "sd-sizing-4-xl": "var(--sizing-4-xl)",
+    "sd-xs": "var(--xs)"
+  }
+}
