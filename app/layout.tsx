@@ -43,7 +43,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <div className="flex flex-col min-h-screen">
             <Header />
             <div className="container flex">
-              ${' '}
               <aside className="hidden md:flex w-60">
                 <Menu />
               </aside>

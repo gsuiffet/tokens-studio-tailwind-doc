@@ -4,6 +4,7 @@ import { Code } from '@/components/ui/code';
 import { EmphasisAndLink } from '@/lib/emphasisAndLink';
 import { GeneratedCSS } from '@/components/ui/generatedCSS';
 import { simple, withChildren, theme } from './codeBlocks';
+import { Next } from '@/components/ui/next';
 
 const data = [
   {
@@ -77,6 +78,7 @@ const GeneratedCSSPage: FC = () => {
         />
         <GeneratedCSS data={data} />
       </section>
+      <Next nextStep="generated-css/variable-token" />
     </>
   );
 };

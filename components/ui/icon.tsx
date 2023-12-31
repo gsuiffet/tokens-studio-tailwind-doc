@@ -10,6 +10,7 @@ import {
   ChevronsUpDown,
   Copy,
   Check,
+  Loader2,
 } from 'lucide-react';
 
 export type IconName =
@@ -22,7 +23,8 @@ export type IconName =
   | 'plus'
   | 'chevrons_up_down'
   | 'copy'
-  | 'check';
+  | 'check'
+  | 'spinner';
 type Size = 'default' | 'large';
 
 interface Props {
@@ -45,6 +47,7 @@ const icons: { [key in IconName]: ({ className }: { className: string }) => Reac
   chevrons_up_down: (props) => <ChevronsUpDown {...props} />,
   copy: (props) => <Copy {...props} />,
   check: (props) => <Check {...props} />,
+  spinner: (props) => <Loader2 {...props} />,
 };
 
 const Icon: FC<Props> = ({
