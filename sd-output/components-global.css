@@ -1,12 +1,18 @@
 /**
  * Do not edit directly
- * Generated on Fri, 22 Dec 2023 15:18:56 GMT
+ * Generated on Sun, 31 Dec 2023 13:46:05 GMT
  */
 
 @layer components {
   /* typography */
   .h1-lg {
     @apply text-[3rem] tracking-[-0.025em] leading-[72px] pl-[0px] normal-case no-underline font-bold  font-Inter;
+  }
+  .menu {
+    @apply text-[0.875rem] tracking-[0em] leading-[20px] pl-[0px] normal-case no-underline font-normal  font-Inter;
+  }
+  .menu-main {
+    @apply text-[0.875rem] tracking-[0em] leading-[20px] pl-[0px] uppercase no-underline font-bold  font-Inter;
   }
   .subtitle {
     @apply text-[1.125rem] tracking-[0px] leading-[28px] pl-[0px] normal-case no-underline font-normal  font-Inter;
@@ -25,11 +31,41 @@
   .my-border-radius {
     @apply rounded-ss-[10%] rounded-se-[30%] rounded-ee-[50%] rounded-es-[70%];
   }
-  .border-sm {
+  .rounded-default {
     @apply rounded-[6px];
+  }
+  .rounded-square-lg {
+    @apply rounded-[0.5rem];
+  }
+  .rounded-half-button-lg {
+    @apply rounded-ss-[0px] rounded-se-[0px] rounded-ee-[0.5rem] rounded-es-[0.5rem];
   }
   /* spacing */
   .my-spacing {
     @apply pt-[1rem] pr-[20px] pb-[8px] pl-[14px];
+  }
+  .spacing-default {
+    @apply py-[0.5rem] px-[1rem];
+  }
+  .spacing-large {
+    @apply py-[0.5rem] px-[2rem];
+  }
+  .spacing-square-xs {
+    @apply py-[0.5rem] px-[0.5rem];
+  }
+  .spacing-square-sm {
+    @apply py-[1rem] px-[1rem];
+  }
+  .spacing-square-md {
+    @apply py-[1.5rem] px-[1.5rem];
+  }
+  .spacing-gap-xxs {
+    @apply gap-[0.25rem];
+  }
+  .spacing-gap-xs {
+    @apply gap-[0.5rem];
+  }
+  .spacing-gap-md {
+    @apply gap-[1.5rem];
   }
 }

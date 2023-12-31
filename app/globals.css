@@ -7,17 +7,6 @@
   :root {
     --radius: 0.5rem;
   }
-  .main-navigation {
-    @apply text-sd-secondary-foreground hover:underline uppercase text-sm;
-  }
-
-  .main-navigation-hover {
-    @apply text-sd-secondary-foreground underline uppercase text-sm;
-  }
-
-  .main-navigation-full {
-    @apply main-navigation hover:main-navigation-hover;
-  }
 
   * {
     @apply border-sd-border-default;
@@ -45,14 +34,14 @@
   }
 
   pre {
-    @apply bg-sd-primary-foreground py-1 px-2 rounded-md w-fit whitespace-pre-wrap;
-  }
-
-  ul {
-    @apply leading-7 list-disc;
+    @apply font-mono bg-sd-primary-foreground py-1 px-2 rounded-md w-fit whitespace-pre-wrap;
   }
 
   section {
     @apply flex flex-col gap-6;
+  }
+
+  a {
+    @apply underline-offset-4;
   }
 }

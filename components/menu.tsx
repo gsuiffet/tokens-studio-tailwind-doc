@@ -6,21 +6,14 @@ interface Props {
   handleClick?: () => void;
 }
 
-const documentationPaths = [
-  'introduction',
-  'installation',
-  'generated CSS',
-  'figma',
-  'changelog',
-  'about',
-];
+const documentationPaths = ['introduction', 'installation', 'generated CSS', 'figma'];
 
 const examplePaths = ['primitives', 'boxShadow', 'border', 'borderRadius', 'spacing', 'typography'];
 
 const Menu: FC<Props> = ({ handleClick }) => {
   return (
     <nav role="navigation" aria-label="Secondary Navigation" className="block md:fixed">
-      <ScrollArea className="w-full p-2 md:p-6 h-[calc(100vh-112px)]">
+      <ScrollArea className="w-full p-sd-sizing-xs md:p-sd-sizing-sm h-[calc(100vh-112px)]">
         <MenuGroup title="get started" items={documentationPaths} handleClick={handleClick} />
         <MenuGroup title="examples" items={examplePaths} handleClick={handleClick}></MenuGroup>
       </ScrollArea>

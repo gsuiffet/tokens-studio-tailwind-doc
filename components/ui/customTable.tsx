@@ -20,21 +20,19 @@ const CustomTable = <T extends Record<Keys, string | ReactElement | null>>({
   data,
 }: Props<T>) => {
   return (
-    <Table className="w-full">
+    <Table>
       <TableHeader>
         <TableRow>
           {dataTitles.map(({ value }, index) => (
-            <TableHead key={index} className="">
-              {value}
-            </TableHead>
+            <TableHead key={index}>{value}</TableHead>
           ))}
         </TableRow>
       </TableHeader>
       <TableBody>
         {data.map((item, index) => (
-          <TableRow className="" key={index}>
+          <TableRow key={index}>
             {dataTitles.map(({ key }, indexCell) => (
-              <TableCell key={indexCell} className="space-y-2 align-top">
+              <TableCell key={indexCell} className="space-y-2">
                 {item[key] || '-'}
               </TableCell>
             ))}

@@ -29,7 +29,7 @@ const simpleShadowToken = {
 
 const complexShadowToken = {
   global: {
-    shadows: {
+    'my-shadow-color': {
       default: {
         value: '228, 10, 10',
         type: 'color',
@@ -42,7 +42,7 @@ const complexShadowToken = {
             x: 5,
             y: 5,
             spread: 3,
-            color: 'rgba({shadows.default}, 0.15)',
+            color: 'rgba({my-shadow-color.default}, 0.15)',
             blur: 5,
             type: 'dropShadow',
           },
@@ -60,7 +60,7 @@ const complexShadowToken = {
     },
   },
   dark: {
-    shadows: {
+    'my-shadow-color': {
       default: {
         value: '145, 207, 118',
         type: 'color',
@@ -73,7 +73,7 @@ const complexShadowToken = {
             x: 5,
             y: 5,
             spread: 3,
-            color: 'rgba({shadows.default}, 0.30)',
+            color: 'rgba({my-shadow-color.default}, 0.30)',
             blur: 5,
             type: 'dropShadow',
           },

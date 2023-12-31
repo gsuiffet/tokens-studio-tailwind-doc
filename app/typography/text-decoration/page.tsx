@@ -16,16 +16,16 @@ const dataTitles: { key: Keys; value: string }[] = [
 
 const data = [
   {
-    value: <pre className="text-xs md:text-sm">none</pre>,
-    generated_class: <pre className="text-xs md:text-sm">no-underline</pre>,
+    value: <pre>none</pre>,
+    generated_class: <pre>no-underline</pre>,
   },
   {
-    value: <pre className="text-xs md:text-sm">underline</pre>,
-    generated_class: <pre className="text-xs md:text-sm">underline</pre>,
+    value: <pre>underline</pre>,
+    generated_class: <pre>underline</pre>,
   },
   {
-    value: <pre className="text-xs md:text-sm">line-through</pre>,
-    generated_class: <pre className="text-xs md:text-sm">line-through</pre>,
+    value: <pre>line-through</pre>,
+    generated_class: <pre>line-through</pre>,
   },
 ];
 

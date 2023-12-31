@@ -3,15 +3,15 @@ import React, { FC, ReactElement } from 'react';
 interface Props {
   data: string | ReactElement | (string | ReactElement)[];
   role?: 'warning' | 'info';
-  className?: string;
+  listStyle?: string;
 }
 
-const Info: FC<Props> = ({ role = 'info', data, className = '' }) => {
+const Info: FC<Props> = ({ role = 'info', data, listStyle = 'list-disc' }) => {
   const isList = Array.isArray(data);
 
-  let paddingClassName = 'px-4 py-3';
+  let paddingClassName = 'spacing-default';
   if (isList) {
-    paddingClassName = 'py-3 px-8';
+    paddingClassName = 'spacing-large';
   }
 
   const colors = {
@@ -20,11 +20,11 @@ const Info: FC<Props> = ({ role = 'info', data, className = '' }) => {
   };
 
   return (
-    <div className={`${paddingClassName} ${colors[role]} leading-normal rounded-lg w-fit`}>
+    <div className={`${paddingClassName} ${colors[role]} rounded-default w-fit`}>
       {!isList && typeof data === 'string' && <p className={colors[role]}>{data}</p>}
       {!isList && typeof data !== 'string' && <div className={colors[role]}>{data}</div>}
       {isList && (
-        <ul className={className}>
+        <ul className={listStyle}>
           {data.map((text, index) => (
             <li key={index} className={colors[role]}>
               {text}

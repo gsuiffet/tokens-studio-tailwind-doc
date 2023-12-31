@@ -20,13 +20,13 @@ interface Props {
 const GeneratedCSS: FC<Props> = ({ data }) => {
   return (
     <>
-      <div className="flex flex-col lg:hidden self-center w-full">
+      <section className="lg:hidden self-center w-full">
         {data.map(({ title, token, generatedCSS }) => (
           <Card className="block lg:hidden w-full" key={title}>
             <CardHeader>
               <CardTitle>{title}</CardTitle>
             </CardHeader>
-            <CardContent className="flex flex-col space-y-6">
+            <CardContent>
               <CardDescription>Token</CardDescription>
               <div className="w-full max-w-md">{token}</div>
               <CardDescription className="w-full max-w-xs">Generated CSS</CardDescription>
@@ -34,7 +34,7 @@ const GeneratedCSS: FC<Props> = ({ data }) => {
             </CardContent>
           </Card>
         ))}
-      </div>
+      </section>
       <div className="hidden lg:block w-full mx-auto">
         <Table>
           <TableHeader>
@@ -47,11 +47,11 @@ const GeneratedCSS: FC<Props> = ({ data }) => {
           <TableBody>
             {data.map(({ title, token, generatedCSS }) => (
               <TableRow className="w-full" key={title}>
-                <TableCell className="w-[100px]">
+                <TableCell className="w-[100px] align-middle">
                   <h3>{title}</h3>
                 </TableCell>
-                <TableCell className="w-2/5 align-top md:max-w-xs">{token}</TableCell>
-                <TableCell className="w-2/5 align-top md:max-w-xs">{generatedCSS}</TableCell>
+                <TableCell className="md:max-w-xs">{token}</TableCell>
+                <TableCell className="md:max-w-xs">{generatedCSS}</TableCell>
               </TableRow>
             ))}
           </TableBody>

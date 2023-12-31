@@ -39,7 +39,7 @@ const PageHeader: FC<Props> = ({ title, description, subMenu }) => {
         <div
           className={`${
             chunks.length > 1 ? 'h-[6.75rem]' : 'h-16'
-          } md:h-24 md:flex fixed bg-sd-background-default/95 backdrop-blur right-0 left-0 md:right-auto md:left-auto mx-6 md:-ml-px md:mr-0 z-50 md:w-full`}
+          } fixed bg-sd-background-default/95 backdrop-blur right-0 left-0 z-50 md:h-24 mx-6 md:flex md:right-auto md:left-auto md:-ml-px md:mr-0 md:w-full`}
         >
           <div className="md:hidden h-full flex flex-col justify-center space-y-1">
             {chunks.map((menuItems, index) => (
@@ -50,7 +50,7 @@ const PageHeader: FC<Props> = ({ title, description, subMenu }) => {
                       <MenubarTrigger
                         onClick={() => router.push(path)}
                         data-state={isSelected(path) ? 'open' : 'unchecked'}
-                        className="w-full whitespace-nowrap cursor-pointer text-xs justify-center"
+                        className="w-full justify-center"
                       >
                         {title}
                       </MenubarTrigger>
@@ -60,14 +60,13 @@ const PageHeader: FC<Props> = ({ title, description, subMenu }) => {
               </div>
             ))}
           </div>
-          <div className="hidden md:flex w-full h-full items-center space-x-1">
+          <div className="hidden md:flex w-full h-full items-center">
             <Menubar className="w-fit">
               {subMenu.map(({ title, path }) => (
                 <MenubarMenu key={title}>
                   <MenubarTrigger
                     onClick={() => router.push(path)}
                     data-state={isSelected(path) ? 'open' : 'unchecked'}
-                    className="whitespace-nowrap cursor-pointer text-sm"
                   >
                     {title}
                   </MenubarTrigger>
@@ -77,7 +76,7 @@ const PageHeader: FC<Props> = ({ title, description, subMenu }) => {
           </div>
         </div>
       )}
-      <section className={`${paddingClassName} gap-2`}>
+      <section className={`${paddingClassName} spacing-gap-xs`}>
         <h1>{title}</h1>
         <p className="subtitle lg:subtitle-lg text-sd-muted-foreground">{description}</p>
       </section>

@@ -1,16 +1,16 @@
 /**
  * Do not edit directly
- * Generated on Fri, 22 Dec 2023 15:18:56 GMT
+ * Generated on Sun, 31 Dec 2023 13:46:05 GMT
  */
 
 @layer components {
   /* typography */
   /* border */
-  .border-outline {
-    @apply dark:border-[hsl(217.2,32.6%,17.5%)] dark:border-[1px] dark:border-solid;
-  }
   .my-border {
     @apply dark:border-[#1d4ed8] dark:border-[2px] dark:border-solid;
+  }
+  .border-outline {
+    @apply dark:border-[hsl(217.2,32.6%,17.5%)] dark:border-[1px] dark:border-solid;
   }
   /* borderRadius */
   .my-border-radius {

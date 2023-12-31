@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { PageHeader } from '@/components/ui/pageHeader';
 import { Info } from '@/components/ui/info';
 import { Code } from '@/components/ui/code';
 import { EmphasisAndLink } from '@/lib/emphasisAndLink';
@@ -45,18 +44,9 @@ const data = [
 const GeneratedCSSPage: FC = () => {
   return (
     <>
-      <PageHeader
-        title="Generated CSS from token"
-        description="Transforming Tokens into Dynamic CSS"
-      />
       <section>
         <Info
           data={[
-            EmphasisAndLink({
-              text: `Variable Token Values: A token value may be defined as a variable. In
-              such cases, the package will automatically assign the corresponding value.`,
-              emphasis: ['Variable Token Values:'],
-            }),
             EmphasisAndLink({
               text: `Transformation of Token Keys: Token keys are transformed into
               kebab-case format. For tokens with multiple children, the package concatenates the

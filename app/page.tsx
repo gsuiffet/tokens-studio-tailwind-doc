@@ -23,12 +23,12 @@ export default function Home() {
         })}
       />
       <section>
-        <div className="flex gap-4">
+        <div className="flex gap-sd-sizing-sm">
           <Link href="/introduction">
             <Button>Get Started</Button>
           </Link>
           <Link href="https://github.com/gsuiffet/tokens-studio-tailwind" target="_blank">
-            <Button variant="outline" className="flex items-center">
+            <Button variant="outline">
               <Icon name="github" size="large" />
               <p>GitHub</p>
             </Button>
@@ -36,7 +36,7 @@ export default function Home() {
         </div>
         <Lottie
           animationData={diagram}
-          className="w-full max-w-lg flex self-center bg-white rounded-md"
+          className="w-full max-w-lg flex self-center bg-white rounded-default"
         />
         <Next nextStep="introduction" />
       </section>

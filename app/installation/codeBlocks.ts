@@ -1,130 +1,596 @@
 const globalToken = {
-  fontSize: {
-    '0': {
-      value: '16',
-      type: 'fontSizes',
+  'my-color': {
+    value: '#b91c1c',
+    type: 'color',
+  },
+  'my-font-size-token': {
+    value: '32',
+    type: 'fontSizes',
+  },
+  'my-shadow-tokens': {
+    value: {
+      x: '0',
+      y: '25',
+      blur: '50',
+      spread: '-12',
+      color: '#1d4ed8',
+      type: 'dropShadow',
     },
-    '1': {
-      value: '20',
-      type: 'fontSizes',
-    },
-    '2': {
-      value: '24',
-      type: 'fontSizes',
-    },
-    '3': {
-      value: '30',
-      type: 'fontSizes',
-    },
-    '4': {
-      value: '48',
-      type: 'fontSizes',
+    type: 'boxShadow',
+  },
+  'my-shadow-color': {
+    default: {
+      value: '228, 10, 10',
+      type: 'color',
     },
   },
-  letterSpacing: {
-    '0': {
-      value: '-1.2%',
-      type: 'letterSpacing',
-    },
-    '1': {
-      value: '-0.75%',
-      type: 'letterSpacing',
-    },
-    '2': {
-      value: '-0.6%',
-      type: 'letterSpacing',
-    },
-    '3': {
-      value: '-0.5%',
-      type: 'letterSpacing',
-    },
-    '4': {
-      value: '0%',
-      type: 'letterSpacing',
+  'my-complex-shadow-tokens': {
+    default: {
+      value: [
+        {
+          x: 5,
+          y: 5,
+          spread: 3,
+          color: 'rgba({my-shadow-color.default}, 0.15)',
+          blur: 5,
+          type: 'dropShadow',
+        },
+        {
+          x: 4,
+          y: 4,
+          spread: 6,
+          color: '#00000033',
+          blur: 5,
+          type: 'innerShadow',
+        },
+      ],
+      type: 'boxShadow',
     },
   },
-  lineHeights: {
-    '0': {
-      value: '100%',
-      type: 'lineHeights',
+  'my-gradient': {
+    value: 'linear-gradient (45deg, {red.700} 0%, {blue.700} 100%)',
+    type: 'color',
+  },
+  'my-border': {
+    value: {
+      width: '4',
+      style: 'dashed',
+      color: '{red.700}',
     },
-    '1': {
-      value: '36',
-      type: 'lineHeights',
+    type: 'border',
+  },
+  'my-border-radius': {
+    value: '10% 30% 50% 70%',
+    type: 'borderRadius',
+  },
+  'my-spacing': {
+    value: '1rem 20 8 14',
+    type: 'spacing',
+  },
+
+  background: {
+    default: {
+      value: 'hsl(0, 0%, 100%)',
+      type: 'color',
     },
-    '2': {
-      value: '32',
-      type: 'lineHeights',
+    foreground: {
+      value: 'hsl(222.2, 84%, 4.9%)',
+      type: 'color',
     },
-    '3': {
-      value: '28',
-      type: 'lineHeights',
+  },
+  primary: {
+    default: {
+      value: 'hsl(222.2, 47.4%, 11.2%)',
+      type: 'color',
     },
+    foreground: {
+      value: 'hsl(210, 40%, 98%)',
+      type: 'color',
+    },
+  },
+  secondary: {
+    default: {
+      value: 'hsl(210, 40%, 96.1%)',
+      type: 'color',
+    },
+    foreground: {
+      value: 'hsl(222.2, 47.4%, 11.2%)',
+      type: 'color',
+    },
+  },
+  muted: {
+    default: {
+      value: 'hsl(210, 40%, 96.1%)',
+      type: 'color',
+    },
+    foreground: {
+      value: 'hsl(215.4, 16.3%, 46.9%)',
+      type: 'color',
+    },
+  },
+  border: {
+    default: {
+      value: 'hsl(214.3, 31.8%, 91.4%)',
+      type: 'color',
+    },
+  },
+  ring: {
+    default: {
+      value: 'hsl(222.2, 84%, 4.9%)',
+      type: 'color',
+    },
+  },
+  red: {
+    '100': {
+      value: '#fee2e2',
+      type: 'color',
+    },
+    '700': {
+      value: '#b91c1c',
+      type: 'color',
+    },
+  },
+  blue: {
+    '100': {
+      value: '#dbeafe',
+      type: 'color',
+    },
+    '700': {
+      value: '#1d4ed8',
+      type: 'color',
+    },
+  },
+  slate: {
+    '400': {
+      value: '#94a3b8',
+      type: 'color',
+    },
+    '700': {
+      value: 'hsl(215, 25%, 24%)',
+      type: 'color',
+    },
+    '800': {
+      value: '#1e293b',
+      type: 'color',
+    },
+  },
+  sky: {
+    '300': {
+      value: '#7dd3fc',
+      type: 'color',
+    },
+  },
+
+  fontFamilies: {
+    Inter: {
+      value: 'Inter',
+      type: 'fontFamilies',
+    },
+  },
+
+  h1: {
+    value: {
+      fontFamily: '{fontFamilies.Inter}',
+      fontWeight: 'Bold',
+      lineHeight: '48',
+      fontSize: '1.875rem',
+      letterSpacing: '-0.025em',
+      paragraphSpacing: '',
+      paragraphIndent: '',
+      textCase: 'none',
+      textDecoration: 'none',
+    },
+    type: 'typography',
+  },
+  'h1-lg': {
+    value: {
+      fontFamily: '{fontFamilies.Inter}',
+      fontWeight: 'Bold',
+      lineHeight: '72',
+      fontSize: '3rem',
+      letterSpacing: '-0.025em',
+      paragraphSpacing: '',
+      paragraphIndent: '',
+      textCase: 'none',
+      textDecoration: 'none',
+    },
+    type: 'typography',
+  },
+  h2: {
+    value: {
+      fontFamily: '{fontFamilies.Inter}',
+      fontWeight: 'Semi Bold',
+      lineHeight: '32',
+      fontSize: '1.5rem',
+      letterSpacing: '-0.025em',
+      paragraphSpacing: '',
+      paragraphIndent: '',
+      textCase: 'none',
+      textDecoration: 'none',
+    },
+    type: 'typography',
+  },
+  h3: {
+    value: {
+      fontFamily: '{fontFamilies.Inter}',
+      fontWeight: 'Semi Bold',
+      lineHeight: '24',
+      fontSize: '0.875rem',
+      letterSpacing: '0em',
+      paragraphSpacing: '',
+      paragraphIndent: '',
+      textCase: 'capitalize',
+      textDecoration: 'none',
+    },
+    type: 'typography',
+  },
+  h4: {
+    value: {
+      fontFamily: '{fontFamilies.Inter}',
+      fontWeight: 'Regular',
+      lineHeight: '100%',
+      fontSize: '0.75rem',
+      letterSpacing: '0em',
+      paragraphSpacing: '',
+      paragraphIndent: '',
+      textCase: 'none',
+      textDecoration: 'none',
+    },
+    type: 'typography',
+  },
+  th: {
+    value: {
+      fontFamily: '{fontFamilies.Inter}',
+      fontWeight: 'Medium',
+      lineHeight: '24',
+      fontSize: '0.875rem',
+      letterSpacing: '0em',
+      paragraphSpacing: '',
+      paragraphIndent: '',
+      textCase: 'capitalize',
+      textDecoration: 'none',
+    },
+    type: 'typography',
+  },
+  li: {
+    value: {
+      fontFamily: '{fontFamilies.Inter}',
+      fontWeight: 'Regular',
+      lineHeight: '28',
+      fontSize: '1rem',
+      letterSpacing: '0em',
+      paragraphSpacing: '',
+      paragraphIndent: '',
+      textCase: 'none',
+      textDecoration: 'none',
+    },
+    type: 'typography',
+  },
+  p: {
+    value: {
+      fontFamily: '{fontFamilies.Inter}',
+      fontWeight: 'Regular',
+      lineHeight: '24',
+      fontSize: '1rem',
+      letterSpacing: '0em',
+      paragraphSpacing: '',
+      paragraphIndent: '',
+      textCase: 'none',
+      textDecoration: 'none',
+    },
+    type: 'typography',
+  },
+  menu: {
+    value: {
+      fontFamily: '{fontFamilies.Inter}',
+      fontWeight: 'Regular',
+      lineHeight: '20',
+      fontSize: '0.875rem',
+      letterSpacing: '0em',
+      paragraphSpacing: '',
+      paragraphIndent: '',
+      textCase: 'none',
+      textDecoration: 'none',
+    },
+    type: 'typography',
+  },
+  'menu-main': {
+    value: {
+      fontFamily: '{fontFamilies.Inter}',
+      fontWeight: 'Bold',
+      lineHeight: '20',
+      fontSize: '0.875rem',
+      letterSpacing: '0em',
+      paragraphSpacing: '',
+      paragraphIndent: '',
+      textCase: 'uppercase',
+      textDecoration: 'none',
+    },
+    type: 'typography',
+  },
+  button: {
+    value: {
+      fontFamily: '{fontFamilies.Inter}',
+      fontWeight: 'Medium',
+      lineHeight: '24',
+      fontSize: '0.875rem',
+      letterSpacing: '0em',
+      paragraphSpacing: '',
+      paragraphIndent: '',
+      textCase: 'capitalize',
+      textDecoration: 'none',
+    },
+    type: 'typography',
+  },
+  subtitle: {
+    value: {
+      fontFamily: '{fontFamilies.Inter}',
+      fontSize: '1.125rem',
+      lineHeight: '28',
+      fontWeight: '400',
+    },
+    type: 'typography',
+  },
+  'subtitle-lg': {
+    value: {
+      fontFamily: '{fontFamilies.Inter}',
+      fontSize: '1.25rem',
+      lineHeight: '30',
+      fontWeight: '400',
+    },
+    type: 'typography',
+  },
+
+  shadow: {
+    default: {
+      value: {
+        x: '0',
+        y: '2',
+        blur: '4',
+        spread: '-2',
+        color: '{background.foreground}',
+        type: 'dropShadow',
+      },
+      type: 'boxShadow',
+    },
+    light: {
+      value: {
+        x: '0',
+        y: '1',
+        blur: '2',
+        spread: '-2',
+        color: '{background.foreground}',
+        type: 'dropShadow',
+      },
+      type: 'boxShadow',
+    },
+  },
+
+  'border-outline': {
+    value: {
+      width: '1',
+      style: 'solid',
+      color: '{border.default}',
+    },
+    type: 'border',
+  },
+
+  rounded: {
+    default: {
+      value: '6',
+      type: 'borderRadius',
+    },
+    'square-lg': {
+      value: '{xs}',
+      type: 'borderRadius',
+    },
+    'half-button-lg': {
+      value: '0 0 {xs} {xs}',
+      type: 'borderRadius',
+    },
+  },
+
+  spacing: {
+    default: {
+      value: '0.5rem 1rem',
+      type: 'spacing',
+    },
+    large: {
+      value: '0.5rem 2rem',
+      type: 'spacing',
+    },
+    'square-xs': {
+      value: '0.5rem 0.5rem',
+      type: 'spacing',
+    },
+    'square-sm': {
+      value: '1rem 1rem',
+      type: 'spacing',
+    },
+    'square-md': {
+      value: '1.5rem 1.5rem',
+      type: 'spacing',
+    },
+    'gap-xxs': {
+      value: '0.25rem',
+      type: 'spacing',
+    },
+    'gap-xs': {
+      value: '0.5rem',
+      type: 'spacing',
+    },
+    'gap-md': {
+      value: '1.5rem',
+      type: 'spacing',
+    },
+  },
+
+  sizing: {
+    xs: {
+      value: '0.5rem',
+      type: 'sizing',
+    },
+    sm: {
+      value: '1rem',
+      type: 'sizing',
+    },
+    md: {
+      value: '1.5rem',
+      type: 'sizing',
+    },
+    lg: {
+      value: '2rem',
+      type: 'sizing',
+    },
+    xl: {
+      value: '2.5rem',
+      type: 'sizing',
+    },
+    '3-xl': {
+      value: '3.5rem',
+      type: 'sizing',
+    },
+    '4-xl': {
+      value: '4rem',
+      type: 'sizing',
+    },
+  },
+
+  xs: {
+    value: '0.5rem',
+    type: 'dimension',
   },
 };
 
 const darkToken = {
-  fontSize: {
-    '0': {
-      value: '16',
-      type: 'fontSizes',
+  'my-color': {
+    value: '#1d4ed8',
+    type: 'color',
+  },
+  'my-font-size-token': {
+    value: '20',
+    type: 'fontSizes',
+  },
+  'my-shadow-tokens': {
+    value: {
+      x: '0',
+      y: '25',
+      blur: '50',
+      spread: '-12',
+      color: '#b91c1c',
+      type: 'dropShadow',
     },
-    '1': {
-      value: '20',
-      type: 'fontSizes',
-    },
-    '2': {
-      value: '24',
-      type: 'fontSizes',
-    },
-    '3': {
-      value: '30',
-      type: 'fontSizes',
-    },
-    '4': {
-      value: '48',
-      type: 'fontSizes',
+    type: 'boxShadow',
+  },
+  'my-shadow-color': {
+    default: {
+      value: '145, 207, 118',
+      type: 'color',
     },
   },
-  letterSpacing: {
-    '0': {
-      value: '-1.2%',
-      type: 'letterSpacing',
-    },
-    '1': {
-      value: '-0.75%',
-      type: 'letterSpacing',
-    },
-    '2': {
-      value: '-0.6%',
-      type: 'letterSpacing',
-    },
-    '3': {
-      value: '-0.5%',
-      type: 'letterSpacing',
-    },
-    '4': {
-      value: '0%',
-      type: 'letterSpacing',
+  'my-complex-shadow-tokens': {
+    default: {
+      value: [
+        {
+          x: 5,
+          y: 5,
+          spread: 3,
+          color: 'rgba({my-shadow-color.default}, 0.30)',
+          blur: 5,
+          type: 'dropShadow',
+        },
+        {
+          x: 4,
+          y: 4,
+          spread: 6,
+          color: '#00000033',
+          blur: 5,
+          type: 'innerShadow',
+        },
+      ],
+      type: 'boxShadow',
     },
   },
-  lineHeights: {
-    '0': {
-      value: '100%',
-      type: 'lineHeights',
+  'my-gradient': {
+    value: 'linear-gradient (45deg, #1d4ed8 0%, #b91c1c 100%)',
+    type: 'color',
+  },
+  'my-border': {
+    value: {
+      width: '2',
+      color: '#1d4ed8',
     },
-    '1': {
-      value: '36',
-      type: 'lineHeights',
+    type: 'border',
+  },
+  'my-border-radius': {
+    value: '10px 160px 6px',
+    type: 'borderRadius',
+  },
+  'my-spacing': {
+    value: '2rem 50% 20',
+    type: 'spacing',
+  },
+
+  background: {
+    default: {
+      value: 'hsl(222.2, 84%, 4.9%)',
+      type: 'color',
     },
-    '2': {
-      value: '32',
-      type: 'lineHeights',
+    foreground: {
+      value: 'hsl(210, 40%, 98%)',
+      type: 'color',
     },
-    '3': {
-      value: '28',
-      type: 'lineHeights',
+  },
+  primary: {
+    default: {
+      value: 'hsl(210, 40%, 98%)',
+      type: 'color',
     },
+    foreground: {
+      value: 'hsl(222.2, 47.4%, 11.2%)',
+      type: 'color',
+    },
+  },
+  secondary: {
+    default: {
+      value: 'hsl(217.2, 32.6%, 17.5%)',
+      type: 'color',
+    },
+    foreground: {
+      value: 'hsl(210, 40%, 98%)',
+      type: 'color',
+    },
+  },
+  muted: {
+    default: {
+      value: 'hsl(217.2, 32.6%, 17.5%)',
+      type: 'color',
+    },
+    foreground: {
+      value: 'hsl(215, 20.2%, 65.1%)',
+      type: 'color',
+    },
+  },
+  border: {
+    default: {
+      value: 'hsl(217.2, 32.6%, 17.5%)',
+      type: 'color',
+    },
+  },
+  ring: {
+    default: {
+      value: 'hsl(212.7, 26.8%, 83.9%)',
+      type: 'color',
+    },
+  },
+
+  'border-outline': {
+    value: {
+      width: '1',
+      style: 'solid',
+      color: '{border.default}',
+    },
+    type: 'border',
   },
 };
 

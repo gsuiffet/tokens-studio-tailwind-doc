@@ -6,22 +6,33 @@ import { Info } from '@/components/ui/info';
 import { Next } from '@/components/ui/next';
 import { Steps } from '@/components/ui/steps';
 import { EmphasisAndLink } from '@/lib/emphasisAndLink';
-// todo
-import { dark, global } from '@/app/installation/codeBlocks';
+import { dark, global } from './codeBlocks';
 
 const step_1 = {
   title: 'Install Tokens Studio',
   description: (
-    <p>
-      {EmphasisAndLink({
-        text: `Start by installing Tokens Studio on your Figma project and click on the \`New empty file\` button.`,
-        emphasis: [`New empty file`],
-        link: {
-          match: 'Tokens Studio',
-          href: 'https://tokens.studio',
-        },
-      })}
-    </p>
+    <>
+      <p>
+        {EmphasisAndLink({
+          text: `Start by installing Tokens Studio on your Figma project and click on the \`New empty file\` button.`,
+          emphasis: [`New empty file`],
+          link: {
+            match: 'Tokens Studio',
+            href: 'https://tokens.studio',
+          },
+        })}
+      </p>
+      <Info
+        data={EmphasisAndLink({
+          text: `You can get a copy of the Tokens Studio Tailwind UI kit. See the Figma page.`,
+          emphasis: [`Tokens Studio Tailwind`],
+          link: {
+            match: 'Figma page',
+            href: '/figma',
+          },
+        })}
+      />
+    </>
   ),
   element: (
     <Image
@@ -55,16 +66,29 @@ const step_2 = {
 const step_3 = {
   title: 'Add default tokens',
   description: (
-    <p>
-      {EmphasisAndLink({
-        text: `Select each theme (set), click on the JSON button {},
-      copy and past the following JSON, then click the \`Save JSON\`button.`,
-        emphasis: ['{}', `Save JSON`],
-      })}
-    </p>
+    <>
+      <p>
+        {EmphasisAndLink({
+          text: `Select each theme (set), click on the JSON button {},
+          copy and past the following JSON, then click the \`Save JSON\`button.`,
+          emphasis: ['{}', `Save JSON`],
+        })}
+      </p>
+      <Info
+        data={EmphasisAndLink({
+          text: `Once you have defined both themes, try activating the dark theme by checking the checkbox in 
+                  the 'dark' set. For further information, please refer to this link.`,
+          emphasis: ["'dark' set"],
+          link: {
+            match: 'link',
+            href: 'https://docs.tokens.studio/themes/token-sets',
+          },
+        })}
+      />
+    </>
   ),
   element: (
-    <div className="space-y-2 lg:flex lg:space-y-0 lg:gap-2">
+    <div className="space-y-2 w-full lg:flex lg:space-y-0 lg:gap-2 lg:w-3/5 xl:w-2/4">
       <Code code={global} title="global.json" language="json" canExpand canCopy />
       <Code code={dark} title="dark.json" language="json" canExpand canCopy />
     </div>

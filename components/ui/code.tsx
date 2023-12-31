@@ -30,7 +30,7 @@ const Code: FC<CodeProps> = ({
   const [isOpen, setIsOpen] = useState(!canExpand);
   const { isCopied, copyToClipboard } = useCopyToClipboard({ timeout: 2000 });
   const copyClassName =
-    'absolute right-0 cursor-pointer hover:bg-sd-slate-700/75 rounded-none w-8 h-full rounded-tr-[2px]';
+    'absolute right-0 cursor-pointer hover:bg-sd-slate-700/75 rounded-none rounded-tr-[2px]';
 
   const onCopy = (codeCopy: string) => {
     if (isCopied) return;
@@ -84,9 +84,9 @@ const Code: FC<CodeProps> = ({
   };
 
   return (
-    <div className="pt-2 bg-sd-slate-800 shadow-lg group self-start rounded-xl border border-sd-primary-default/25 w-full">
-      <div className="flex text-sd-slate-400 text-xs leading-6">
-        <h4 className="flex-none border-t border-b border-t-transparent border-b-sd-sky-300 px-4 py-2 flex items-center">
+    <div className="pt-2 bg-sd-slate-800 shadow-sd-shadow-default self-start rounded-square-lg w-full">
+      <div className="flex text-sd-slate-400">
+        <h4 className="flex-none border-b border-b-sd-sky-300 spacing-default flex items-center h-sd-sizing-xl">
           {title}
         </h4>
         <div className="flex items-center flex-auto bg-sd-slate-700/50 relative">
@@ -116,7 +116,7 @@ const Code: FC<CodeProps> = ({
       </SyntaxHighlighter>
       {canExpand && (
         <div
-          className="bg-sd-slate-700/50 hover:bg-sd-slate-700/75 p-px cursor-pointer flex items-center justify-center rounded-b-xl"
+          className="bg-sd-slate-700/50 hover:bg-sd-slate-700/75 h-sd-sizing-xl cursor-pointer flex items-center justify-center rounded-half-button-lg"
           onClick={() => setIsOpen(!isOpen)}
         >
           <Icon name="chevrons_up_down" classNameIcon="text-white/90" />

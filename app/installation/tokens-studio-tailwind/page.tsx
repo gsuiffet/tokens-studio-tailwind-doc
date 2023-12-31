@@ -4,6 +4,7 @@ import { Code } from '@/components/ui/code';
 import { Info } from '@/components/ui/info';
 import { EmphasisAndLink } from '@/lib/emphasisAndLink';
 import { script } from '../codeBlocks';
+import { Next } from '@/components/ui/next';
 
 const step_1 = {
   title: 'Install Tokens Studio Tailwind',
@@ -92,7 +93,7 @@ const step_4 = {
             emphasis: [`./sd-output`, `global.css`],
           }),
         ]}
-        className="list-decimal"
+        listStyle="list-decimal"
       />
     </>
   ),
@@ -136,5 +137,10 @@ const step_5 = {
 };
 
 export default function InstallationTokensStudioTailwind() {
-  return <Steps steps={[step_1, step_2, step_3, step_4, step_5]} />;
+  return (
+    <>
+      <Steps steps={[step_1, step_2, step_3, step_4, step_5]} />
+      <Next nextStep="generated-css" />
+    </>
+  );
 }

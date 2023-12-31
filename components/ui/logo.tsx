@@ -8,8 +8,8 @@ interface Props {
 
 export function Logo({ classname }: Props) {
   return (
-    <Link href="/" className={`space-x-2 items-center h-full ${classname}`}>
-      <div className="pt-1 h-12 w-12 relative">
+    <Link href="/" className={`spacing-gap-xs items-center h-full ${classname}`}>
+      <div className="h-sd-sizing-xl w-sd-sizing-xl relative">
         <Image src="/logo.svg" alt="logo" fill className="scale-100 dark:scale-0" priority />
         <Image
           src="/logo-negative.svg"
@@ -19,9 +19,7 @@ export function Logo({ classname }: Props) {
           priority
         />
       </div>
-      <p className="text-sd-secondary-foreground font-bold inline-block text-sm uppercase">
-        tokens studio tailwind
-      </p>
+      <p className="menu-main">tokens studio tailwind</p>
     </Link>
   );
 }

@@ -1,19 +1,7 @@
 import { fontFamily } from 'tailwindcss/defaultTheme';
 import tokens from './sd-output/tw-tokens.json';
 
-const {
-  // spacing,
-  // opacity,
-  // borderWidth,
-  backgroundImage,
-  color: colors,
-  boxShadow,
-  // lineHeight,
-  fontSize,
-  // letterSpacing,
-} = tokens;
-
-console.log('tokens', tokens);
+const { spacing, backgroundImage, color: colors, boxShadow, fontSize } = tokens;
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -33,19 +21,15 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        Inter: ['var(--font-Inter)', ...fontFamily.sans],
+        mono: ['menlo', ...fontFamily.mono],
+      },
       boxShadow,
       fontSize,
       backgroundImage,
-      fontFamily: {
-        Inter: ['var(--font-Inter)', ...fontFamily.sans],
-        mono: ['menlo', ...fontFamily.sans],
-      },
+      spacing,
       colors,
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
-      },
       keyframes: {
         'accordion-down': {
           from: { height: 0 },

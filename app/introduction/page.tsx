@@ -16,7 +16,7 @@ export default function Introduction() {
       <section>
         <p>
           {EmphasisAndLink({
-            text: `Compatibility: This package is compatible with Tailwind CSS version ^3 and currently 
+            text: `Compatibility: This package is compatible with Tailwind CSS version 3.3.5 and currently 
                     supports the free version ^1 of Tokens-studio. For different versions, please verify 
                     compatibility or consider updating your Tailwind CSS installation.`,
             emphasis: [

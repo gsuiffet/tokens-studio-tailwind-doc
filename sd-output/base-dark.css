@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Fri, 22 Dec 2023 15:18:56 GMT
+ * Generated on Sun, 31 Dec 2023 13:46:05 GMT
  */
 
 @layer base {
@@ -19,6 +19,8 @@
     /* lineHeight */
 
     /* color */
+    --my-color: #1d4ed8 !important;
+    --my-shadow-color-default: 145, 207, 118 !important;
     --background-default: 222.2 84% 4.9% !important;
     --background-foreground: 210 40% 98% !important;
     --primary-default: 210 40% 98% !important;
@@ -28,10 +30,7 @@
     --muted-default: 217.2 32.6% 17.5% !important;
     --muted-foreground: 215 20.2% 65.1% !important;
     --border-default: 217.2 32.6% 17.5% !important;
-    --input-default: 217.2 32.6% 17.5% !important;
     --ring-default: 212.7 26.8% 83.9% !important;
-    --my-color: #1d4ed8 !important;
-    --shadows-default: 145, 207, 118 !important;
     /* backgroundImage */
     --my-gradient: linear-gradient(45deg, #1d4ed8 0%, #b91c1c 100%) !important;
     /* boxShadow */

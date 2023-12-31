@@ -1,5 +1,7 @@
 {
   "color": {
+    "sd-my-color": "var(--my-color)",
+    "sd-my-shadow-color-default": "var(--my-shadow-color-default)",
     "sd-background-default": "hsl(var(--background-default))",
     "sd-background-foreground": "hsl(var(--background-foreground))",
     "sd-primary-default": "hsl(var(--primary-default))",
@@ -9,10 +11,7 @@
     "sd-muted-default": "hsl(var(--muted-default))",
     "sd-muted-foreground": "hsl(var(--muted-foreground))",
     "sd-border-default": "hsl(var(--border-default))",
-    "sd-input-default": "hsl(var(--input-default))",
-    "sd-ring-default": "hsl(var(--ring-default))",
-    "sd-my-color": "var(--my-color)",
-    "sd-shadows-default": "var(--shadows-default)"
+    "sd-ring-default": "hsl(var(--ring-default))"
   },
   "fontSize": {
     "sd-my-font-size-token": "var(--my-font-size-token)"

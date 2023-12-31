@@ -5,8 +5,8 @@ import { Info } from '@/components/ui/info';
 
 const data = [
   {
-    token_type: 'letterSpacing',
-    tailwind_utility: 'letterSpacing',
+    token_type: <p>letterSpacing</p>,
+    tailwind_utility: <p>letterSpacing</p>,
     allowed_units: <pre>px | % | rem | em</pre>,
     default_unit: <pre>px</pre>,
     default_token_value: <pre>0px</pre>,
@@ -18,16 +18,16 @@ const data = [
     ),
   },
   {
-    token_type: 'lineHeights',
-    tailwind_utility: 'lineHeight',
+    token_type: <p>lineHeight</p>,
+    tailwind_utility: <p>lineHeight</p>,
     allowed_units: <pre>px | %</pre>,
     default_unit: <pre>px</pre>,
     default_token_value: <pre>0px</pre>,
     usage: <pre>{`leading-sd-{lineHeight}`}</pre>,
   },
   {
-    token_type: 'borderWidth',
-    tailwind_utility: 'borderWidth',
+    token_type: <p>borderWidth</p>,
+    tailwind_utility: <p>borderWidth</p>,
     allowed_units: <pre>px | % | rem | em</pre>,
     default_unit: <pre>px</pre>,
     default_token_value: <pre>0px</pre>,
@@ -39,16 +39,16 @@ const data = [
     ),
   },
   {
-    token_type: 'opacity',
-    tailwind_utility: 'opacity',
+    token_type: <p>opacity</p>,
+    tailwind_utility: <p>opacity</p>,
     allowed_units: <pre>%</pre>,
     default_unit: null,
     default_token_value: <pre>1</pre>,
     usage: <pre>{`opacity-sd-{opacity}`}</pre>,
   },
   {
-    token_type: 'sizing',
-    tailwind_utility: 'spacing',
+    token_type: <p>sizing</p>,
+    tailwind_utility: <p>spacing</p>,
     allowed_units: <pre>px | rem | em</pre>,
     default_unit: <pre>px</pre>,
     default_token_value: <pre>0px</pre>,
@@ -71,8 +71,8 @@ const data = [
     ),
   },
   {
-    token_type: 'dimension',
-    tailwind_utility: 'spacing',
+    token_type: <p>dimension</p>,
+    tailwind_utility: <p>spacing</p>,
     allowed_units: <pre>px | rem | em</pre>,
     default_unit: <pre>px</pre>,
     default_token_value: <pre>0px</pre>,

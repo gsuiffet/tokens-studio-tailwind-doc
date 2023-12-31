@@ -24,11 +24,11 @@ const MenuGroup: FC<Props> = ({ title, items, handleClick }) => {
   };
 
   return (
-    <ul className="text-sd-muted-foreground text-sm">
+    <ul className="text-sd-muted-foreground">
       <Link href={`/${items[0]}`} onClick={handleClick}>
-        <li className="py-2 px-2 font-bold capitalize">{title}</li>
+        <li className="spacing-default font-bold capitalize">{title}</li>
       </Link>
-      <div className="flex flex-col space-y-1">
+      <div className="flex flex-col">
         {items.map((item) => {
           const path = kebabCase(item);
           const isCurrent = `/${path}` === selectedPath ? 'page' : undefined;
@@ -36,7 +36,7 @@ const MenuGroup: FC<Props> = ({ title, items, handleClick }) => {
           return (
             <Link href={`/${path}`} key={item} onClick={handleClick}>
               <li
-                className={`rounded-sm px-3 py-1.5 capitalize hover:underline ${isSelected(
+                className={`menu spacing-large capitalize hover:underline ${isSelected(
                   `/${path}`,
                 )}`}
                 aria-current={isCurrent}

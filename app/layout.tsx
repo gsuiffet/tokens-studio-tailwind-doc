@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 import { Header } from '@/components/header';
 import { Menu } from '@/components/menu';
 import Link from 'next/link';
+import { EmphasisAndLink } from '@/lib/emphasisAndLink';
 
 const fontInter = Inter({
   subsets: ['latin'],
@@ -42,26 +43,24 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <div className="flex flex-col min-h-screen">
             <Header />
             <div className="container flex">
-              {/*<aside className="hidden md:flex w-60">*/}
+              ${' '}
               <aside className="hidden md:flex w-60">
                 <Menu />
               </aside>
-              <main className="w-full px-4 pb-4 flex flex-col gap-8">
-                {/*<div className="w-full md:max-w-[550px] lg:max-w-[980px]">{children}</div>*/}
-                {/*<div className="w-full md:max-w-[calc(100vw-15rem)]">{children}</div>*/}
-                {/*<div className="w-full md:max-w-[calc(100vw-15rem)]">{children}</div>*/}
+              <main className="w-full px-sd-sizing-sm pb-sd-sizing-2-xl flex flex-col gap-sd-sizing-lg">
                 {children}
-                {/*h-[calc(100vh-112px)]*/}
               </main>
             </div>
-            <footer className="container mt-auto h-14 border-t flex items-center bg-sd-background-default">
+            <footer className="container mt-auto h-sd-sizing-3-xl border-t flex items-center">
               <p className="text-sd-muted-foreground text-xs sm:text-sm">
-                This website has been made using <strong>Tokens Studio Tailwind</strong>. See the
-                source code on {/*todo*/}
-                <Link href="https://www" className="underline">
-                  GitHub
-                </Link>
-                .
+                {EmphasisAndLink({
+                  text: `This website has been made using Tokens Studio Tailwind. See the source code on GitHub.`,
+                  emphasis: ['Tokens Studio Tailwind'],
+                  link: {
+                    match: 'GitHub',
+                    href: 'https://github.com/gsuiffet/tokens-studio-tailwind-doc',
+                  },
+                })}
               </p>
             </footer>
           </div>

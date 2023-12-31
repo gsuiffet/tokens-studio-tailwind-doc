@@ -57,7 +57,7 @@ export function ModeToggle() {
             } `}
           >
             <Icon name={icon} />
-            <p className="text-sd-secondary-foreground capitalize">{name}</p>
+            <p className="capitalize">{name}</p>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

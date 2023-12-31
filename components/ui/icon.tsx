@@ -56,13 +56,13 @@ const Icon: FC<Props> = ({
   handleClick,
 }) => {
   const iconSize = {
-    default: 'w-4 h-4',
-    large: 'w-6 h-6',
+    default: 'w-sd-sizing-sm h-sd-sizing-sm',
+    large: 'w-sd-sizing-md h-sd-sizing-md',
   };
   const IconComponent = icons[name];
 
   return (
-    <div className={`p-2 ${classNameContainer}`} onClick={handleClick}>
+    <div className={`spacing-square-xs ${classNameContainer}`} onClick={handleClick}>
       <IconComponent className={`${color} ${classNameIcon} ${iconSize[size]}`} />
     </div>
   );

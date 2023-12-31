@@ -13,10 +13,10 @@ const Drawer: FC = () => {
       <SheetTrigger className="flex items-center">
         <Icon name="menu" size="large" handleClick={() => setIsSheetOpen(true)} />
       </SheetTrigger>
-      <SheetContent side="left">
+      <SheetContent>
         <SheetHeader>
-          <SheetTitle className="h-14">
-            <Logo classname="flex p-2" />
+          <SheetTitle>
+            <Logo classname="flex p-sd-sizing-xs" />
           </SheetTitle>
           <Menu handleClick={() => setIsSheetOpen(false)} />
         </SheetHeader>

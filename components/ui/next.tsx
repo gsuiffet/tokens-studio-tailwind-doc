@@ -10,7 +10,7 @@ const Next: FC<Props> = ({ nextStep }) => {
   return (
     <div className="flex justify-end">
       <Link href={`/${nextStep}`}>
-        <Button className="capitalize">{nextStep}</Button>
+        <Button>{nextStep.replace('-', ' ')}</Button>
       </Link>
     </div>
   );
