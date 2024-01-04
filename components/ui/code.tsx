@@ -30,7 +30,7 @@ const Code: FC<CodeProps> = ({
   const [isOpen, setIsOpen] = useState(!canExpand);
   const { isCopied, copyToClipboard } = useCopyToClipboard({ timeout: 2000 });
   const copyClassName =
-    'absolute right-0 cursor-pointer hover:bg-sd-slate-700/75 rounded-none rounded-tr-[2px]';
+    'w-sd-sizing-xl h-sd-sizing-xl flex justify-center items-center absolute right-0 cursor-pointer hover:bg-sd-slate-700/75 rounded-none rounded-tr-[2px]';
 
   const onCopy = (codeCopy: string) => {
     if (isCopied) return;
