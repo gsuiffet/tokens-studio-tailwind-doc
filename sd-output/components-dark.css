@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sun, 31 Dec 2023 13:46:05 GMT
+ * Generated on Wed, 03 Jan 2024 09:38:18 GMT
  */
 
 @layer components {
@@ -18,6 +18,6 @@
   }
   /* spacing */
   .my-spacing {
-    @apply dark:pt-[2rem] dark:px-[0.5em] dark:pb-[20px];
+    @apply dark:pt-[10px] dark:px-[50px] dark:pb-[20px];
   }
 }

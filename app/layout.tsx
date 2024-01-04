@@ -6,7 +6,6 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { cn } from '@/lib/utils';
 import { Header } from '@/components/header';
 import { Menu } from '@/components/menu';
-import Link from 'next/link';
 import { EmphasisAndLink } from '@/lib/emphasisAndLink';
 
 const fontInter = Inter({

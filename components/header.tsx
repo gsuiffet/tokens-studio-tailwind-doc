@@ -16,7 +16,7 @@ const Header: FC = () => {
         <Logo classname="hidden md:flex mr-sd-sizing-xl" />
         <div className="flex items-center gap-sd-sizing-sm">
           <nav
-            className="menu-main hidden md:flex gap-sd-sizing-sm"
+            className="menu-main text-sd-primary-default hidden md:flex gap-sd-sizing-sm"
             role="navigation"
             aria-label="Main Navigation"
           >

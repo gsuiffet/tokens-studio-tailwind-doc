@@ -1,13 +1,13 @@
 const spacingToken = {
   global: {
     'my-spacing': {
-      value: '1rem 20 8 14',
+      value: '1rem 0 8 14',
       type: 'spacing',
     },
   },
   dark: {
     'my-spacing': {
-      value: '2rem 50% 20',
+      value: '10 50 20',
       type: 'spacing',
     },
   },

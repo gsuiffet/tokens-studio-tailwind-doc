@@ -34,7 +34,7 @@
   }
 
   pre {
-    @apply font-mono bg-sd-primary-foreground py-1 px-2 rounded-md w-fit whitespace-pre-wrap;
+    @apply font-mono bg-sd-primary-foreground spacing-default rounded-default w-fit whitespace-pre-wrap;
   }
 
   section {

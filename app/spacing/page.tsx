@@ -3,7 +3,7 @@ import { PageHeader } from '@/components/ui/pageHeader';
 import { Info } from '@/components/ui/info';
 import { CardTable } from '@/components/ui/cardTable';
 import { TokenExample } from '@/components/ui/tokenExample';
-import { Rocket } from 'lucide-react';
+import { Star } from 'lucide-react';
 import { spacing } from './codeBlocks';
 import { EmphasisAndLink } from '@/lib/emphasisAndLink';
 
@@ -80,10 +80,10 @@ const Spacing: FC = () => {
 
       <TokenExample
         example={spacing}
-        usage={`<div className="my-spacing bg-sd-my-color w-fit">\n  <Rocket className="w-12 h-12 text-sd-primary-foreground"/>\n</div>`}
+        usage={`<div className="my-spacing bg-sd-my-color w-[100px] h-[50px] rounded-md">\n  <Star className="w-[24px] h-[24px] text-sd-primary-foreground"/>\n</div>`}
       >
-        <div className="my-spacing bg-sd-my-color w-fit">
-          <Rocket className="w-12 h-12 text-sd-primary-foreground" />
+        <div className="my-spacing bg-sd-my-color w-[100px] h-[50px] rounded-md">
+          <Star className="w-[24px] h-[24px] text-white" />
         </div>
       </TokenExample>
     </>
