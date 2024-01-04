@@ -4,7 +4,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 import { cn } from '@/lib/utils';
 
-const buttonVariants = cva('flex items-center justify-center rounded-default transition-colors', {
+const buttonVariants = cva('inline-flex items-center rounded-default transition-colors', {
   variants: {
     variant: {
       default:
